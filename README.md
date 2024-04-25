@@ -3,7 +3,9 @@
 # Technologies:
 - HTML
 - CSS
-- Express with Node.js
+- EJS
+- Express
+- Node.js
 - MVC Pattern
 
 # Libraries
