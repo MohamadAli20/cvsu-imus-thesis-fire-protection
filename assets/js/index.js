@@ -1,7 +1,10 @@
 $(document).ready(function(){
     let fireDataPh = [];
     let imusFireData = [];
-
+    
+    /*
+    * Fetch Philippines fire data & filter to get the fire data in Imus City
+    */
     $("button").click(function(){
         $.get("/firedata", function(dataString){
             getFireData(dataString);
@@ -39,7 +42,7 @@ $(document).ready(function(){
         const southEastLatitude =  14.344069;
         const southEastLongitude = 120.969294;
 
-        // 14°26'36.3"N 120°55'02.0"E
+        // 14.443423,120.917212
 
         for(let i = 0; i < fireDataPh.length; i++){
             let latitudeLocation = parseFloat(fireDataPh[i].latitude);
@@ -49,12 +52,35 @@ $(document).ready(function(){
                 (latitudeLocation < northEastLatitude && longitudeLocation < northEastLongitude) &&
                 (latitudeLocation > southWestLatitude && longitudeLocation > southWestLongitude) &&
                 (latitudeLocation > southEastLatitude && longitudeLocation < southEastLongitude)){
-                    // imusFireData.push(fireDataPh[i]);
-                    console.log(fireDataPh[i]);
+                    imusFireData.push(fireDataPh[i]);
             }
-            // console.log(fireDataPh[i]);
         }
-        // console.log(imusFireData);
+        addMark();
     }
+
+    /*
+    * Setting up the map
+    */
+    var map = L.map('map').setView([14.387481, 120.945634], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var fireIcon = L.icon({
+        iconUrl: '/images/fire.svg',
+        iconSize: [40, 40], // Size of the icon
+        iconAnchor: [20, 40], // Point of the icon which will correspond to marker's location
+    });
     
+
+    let addMark = () => {
+        for(let i = 0; i < imusFireData.length; i++){
+            let latitude = parseFloat(imusFireData[i].latitude);
+            let longitude = parseFloat(imusFireData[i].longitude);
+
+            let marker = L.marker([latitude, longitude], {icon: fireIcon}).addTo(map);
+        }
+    }
 })
