@@ -16,8 +16,7 @@ class FetchData{
             +"PHL,14.428707,120.947236,321.82,1.98,1.37,2024-04-24,213,Terra,MODIS,46,6.1NRT,292.93,28.92,D\n" /*Palico IV, Imus, Cavite*/
             +"PHL,14.430018,120.922288,321.82,1.98,1.37,2024-04-24,213,Terra,MODIS,46,6.1NRT,292.93,28.92,D\n" /*Carsadang Bago ll Imus Cavite*/
             +"PHL,14.364280,120.920745,324.39,1.73,1.29,2024-04-24,213,Terra,MODIS,76,6.1NRT,294.28,29.12,D\n" /*Malagasang II-B, Imus, Cavite*/
-            +"PHL,14.383902,120.960883,1.73,1.29,2024-04-24,213,Terra,MODIS,80,6.1NRT,294.91,38.7,D\n" /*Building B, Ground Floor, Ayala Malls Vermosa, Daang Hari Road, Imus, Cavite*/
-            // +"PHL,17.48305,121.50108,319.01,1.72,1.29,2024-04-24,213,Terra,MODIS,68,6.1NRT,294.73,16.18,D\n"
+            +"PHL,14.383902,120.960883,319.01,1.72,1.29,2024-04-24,213,Terra,MODIS,68,6.1NRT,294.73,16.18,D\n"/*Building B, Ground Floor, Ayala Malls Vermosa, Daang Hari Road, Imus, Cavite*/
             // +"PHL,18.06879,121.38731,316.65,1.65,1.26,2024-04-24,213,Terra,MODIS,63,6.1NRT,290.03,20.02,D\n"
             // +"PHL,18.0719,121.37806,313.54,1.65,1.26,2024-04-24,213,Terra,MODIS,56,6.1NRT,289.74,14.53,D\n"
             // +"PHL,12.57174,121.0396,320.98,1.96,1.37,2024-04-24,215,Terra,MODIS,61,6.1NRT,299.01,22.68,D\n"

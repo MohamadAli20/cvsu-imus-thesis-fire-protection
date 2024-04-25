@@ -5,11 +5,9 @@ $(document).ready(function(){
     /*
     * Fetch Philippines fire data & filter to get the fire data in Imus City
     */
-    $("button").click(function(){
-        $.get("/firedata", function(dataString){
-            getFireData(dataString);
-        }, 'json');
-    })
+    $.get("/firedata", function(dataString){
+        getFireData(dataString);
+    }, 'json');
 
     /* convert JSON string into JavaScript Object and push to the array*/
     let getFireData = (dataString) => {
@@ -61,7 +59,7 @@ $(document).ready(function(){
     /*
     * Setting up the map
     */
-    var map = L.map('map').setView([14.387481, 120.945634], 13);
+    var map = L.map('map').setView([14.399411, 120.945548], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -79,8 +77,18 @@ $(document).ready(function(){
         for(let i = 0; i < imusFireData.length; i++){
             let latitude = parseFloat(imusFireData[i].latitude);
             let longitude = parseFloat(imusFireData[i].longitude);
+            let brightness = parseFloat(imusFireData[i].brightness);
+            let confidence = parseFloat(imusFireData[i].confidence);
+            let instrument = imusFireData[i].instrument;
 
             let marker = L.marker([latitude, longitude], {icon: fireIcon}).addTo(map);
+            let information = "Latitude: " + latitude +
+                            "<br>Longitude: " + longitude +
+                            "<br>Brightness: " + brightness +
+                            "<br>Confidence: " + confidence +
+                            "<br>Instrument: " + instrument;
+
+            marker.bindPopup(information);
         }
     }
 })
