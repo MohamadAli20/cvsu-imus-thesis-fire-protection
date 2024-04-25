@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/proxima-nova-2/Proxima_Nova_Regular.otf') format('opentype');
+}
+*{
+    font-family: 'Proxima Nova', sans-serif;
+    color: #43444E;
+}
+body{
+    height: 100vh;
+}
+.custom_nav{
+    border-bottom: 1px solid #43444E;
+}
+    .custom_nav a{
+        color: #43444E;
+        margin: 0 20px;
+        display: inline-block;
+    }
+    .custom_nav div{
+        width: 20%;
+        margin-left: 0;
+    }
+    .custom_nav ul{
+        display: inline-block;
+    }
+    .custom_nav ul li{
+        display: inline-block;
+    }
+    .custom_nav .buttons{
+        width: 500px;
+        text-align: right;
+    }
+        .custom_signup{
+            border-color: #f2725f;
+            color: #f2725f;
+            display: inline-block;
+        }
+        .buttons p,
+        .buttons #btn_logout{
+            display: inline-block;
+            margin-bottom: 0;
+            display: none;
+        }
+        .buttons button,
+        .buttons a{
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        .active{
+            font-weight: bolder;
+        }
+    .custom_nav div
+    .custom_signup{
+        border-color: #f2725f;;
+        color: #f2725f;
+        margin: 0 20px
+    }
+main{
+    
+}
+    main figure{
+        width: 200px;
+        height: 170px;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        display: inline-block;
+        margin: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+        main figure div{
+            height: 110px;
+            overflow: hidden;
+        }
+        main figure:hover{
+            box-shadow: 0px 10px 15px 16px rgba(0,0,0,0.1);
+        }
+        main figure .musicsheet{
+            width: 100%;
+        }
+        figure .btnPlay{
+            width: 70px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        figure .deleteIcon{
+            width: 20px;
+            position: absolute;
+            bottom: 25px;
+            right: 10px;
+        }
+        main figcaption{
+            padding: 5px;
+        }
+            main figcaption span{
+                display: block;
+            }
+            figcaption .span_date{
+                font-size: 13px;
+            }
+/* logout modal */
+.logout_background{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+.logout_modal{
+    background-color: white;
+    width: 30%;
+    height: 300px;
+    margin: 100px auto;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+    .logout_modal h3{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .logout_modal p{
+        text-align: center;
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    #btn_yes_logout{
+        color: white;
+        background-color: #f2725f;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        font-weight: bolder;
+        margin: 20px 0;
+        display: inline-block;
+    }
+/* open music modal */
+.open_music_background{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+.open_music_modal{
+    background-color: white;
+    width: 30%;
+    height: 400px;
+    margin: 100px auto;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+    .open_music_modal figure div{
+        width: 300px;
+        height: 170px;
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1);
+    }
+    .open_music_modal figure img{
+        width: 100%;
+    }
+    .open_music_modal h3{
+        text-align: center;
+        /* margin-top: 20px; */
+    }
+    .open_music_modal p{
+        text-align: center;
+        font-size: 18px;
+        /* padding: 20px 0; */
+    }
+    #btn_open_music{
+        color: white;
+        background-color: #f2725f;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        font-weight: bolder;
+        margin: 20px 0;
+        display: inline-block;
+    }
+/* delete modal */
+.delete_background{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+.delete_modal{
+    background-color: white;
+    width: 30%;
+    height: 400px;
+    margin: 100px auto;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+    .delete_modal figure div{
+        width: 300px;
+        height: 170px;
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1);
+    }
+    .delete_modal figure img{
+        width: 100%;
+    }
+    .delete_modal h3{
+        text-align: center;
+    }
+    .delete_modal p{
+        text-align: center;
+        font-size: 18px;
+    }
+    #btn_delete_music{
+        color: white;
+        background-color: #f2725f;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        font-weight: bolder;
+        margin: 20px 0;
+        display: inline-block;
+    }

@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection/issues"
   },
-  "homepage": "https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection#readme"
+  "homepage": "https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection#readme",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
 }
