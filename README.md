@@ -4,7 +4,11 @@
 - HTML
 - CSS
 - Express with Node.js
-- MVC Framework
+- MVC Pattern
 
-Libraries
+# Libraries
+- Axios
 - Leaflet.js
+
+# API
+- FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
