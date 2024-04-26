@@ -10,7 +10,7 @@
 
 # Libraries
 - Axios
-- Leaflet.js
+- Leaflet.js with OpenStreetMap
 
 # API
 - FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
