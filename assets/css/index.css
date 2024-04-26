@@ -1,3 +1,94 @@
-#map{ 
-    height: 80vh; 
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border: 1px dotted red; */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+body{
+    height: 100vh;
+}
+/*Navigation*/
+nav{
+    position: relative;
+    padding: 15px;
+    height: 10%;
+    border-bottom: 1px solid black;
+    white-space: nowrap;
+    font-size: 0;
+}
+    nav h3, nav ul, nav div{
+        display: inline-block;
+        width: 33.33%;
+        margin: 0;
+        padding: 0;
+        /* border: 0; */
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    nav h3{
+        font-size: 20px;
+    }
+    nav ul{
+        text-align: center;
+    }
+        nav ul li{
+            list-style: none;
+            display: inline-block;
+        }
+            nav ul li a{
+                text-decoration: none;
+                color: black;
+                margin: 10px;
+            }
+            #dashboard{
+                font-weight: bold;
+            }
+    nav div{
+        text-align: right;
+    }
+/*Main*/
+main{
+    width: 100%;
+    height: 90%;
+    white-space: nowrap;
+    font-size: 0;
+}
+    .main_nav, .main_body{
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+        font-size: 16px;
+    }
+    .main_nav{
+        width: 20%;
+        border-right: 1px solid black;
+        padding: 20px;
+    }
+        .main_nav .options{
+            height: 10vh;
+        }
+            .options select, 
+            .options label,
+            .options input[type='date'],
+            .options input[type='number']{
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+                padding: 5px;
+            }
+            .options div{
+                margin-bottom: 10px;
+                border-bottom: 1px solid black;
+            }
+    .main_body{
+        width: 80%;
+    }
+        #map{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        
