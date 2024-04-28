@@ -1,16 +1,19 @@
 const axios = require('axios');
 
 class FetchData{
+    
     async getFireData(req, res) {
         try{
-            // const response = await axios.get("https://firms.modaps.eosdis.nasa.gov/api/country/csv/c1cfea789591c42cfe9feb7c959d5719/MODIS_NRT/PHL/10/2024-04-26");
-            // res.json(response.data);
+            /* Get date today */
+            let currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = (currentDate.getMonth() + 1 < 10) ? '0' + (currentDate.getMonth() + 1) : currentDate.getMonth() + 1;
+            const day = (currentDate.getDate() < 10) ? '0' + currentDate.getDate() : currentDate.getDate();
 
-            /*CVSU Imus coordinates*/
-            // 14.428707, 120.947236
+            currentDate = `${year}-${month}-${day}`;
 
             /*This is just for testing, uncomment the above fetching process to fetch the firedata from FIRMS API*/
-            const fireData = 
+            // const fireData = 
             "country_id,latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_t31,frp,daynight\n"
             +"PHL,16.89077,122.12851,324.12,1.97,1.37,2024-04-24,213,Terra,MODIS,60,6.1NRT,295.82,31.79,D\n"
             +"PHL,14.428707,120.947236,321.82,1.98,1.37,2024-04-24,213,Terra,MODIS,46,6.1NRT,292.93,28.92,D\n" /*Palico IV, Imus, Cavite*/
@@ -100,7 +103,24 @@ class FetchData{
             +"PHL,18.10718,121.3304,318.71,2.13,1.42,2024-04-25,525,Aqua,MODIS,44,6.1NRT,297.18,25,D\n"
             +"PHL,18.1123,121.34231,316.16,2.12,1.42,2024-04-25,525,Aqua,MODIS,20,6.1NRT,296.36,16.54,D\n";
             
-            res.json(fireData)
+            const { instrument, date, range } = req.params;
+            // console.log(req.params);
+            if(date !== currentDate){
+                const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/c1cfea789591c42cfe9feb7c959d5719/${instrument}/PHL/${range}/${date}`);
+                res.json(response.data);
+                // console.log(response.data);
+                // console.log("Date selected: ", req.params); 
+            }
+            else if(date === currentDate){
+                const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/c1cfea789591c42cfe9feb7c959d5719/${instrument}/PHL/${range}`);
+                res.json(response.data);
+                // console.log(response.data);
+                // console.log("Date today: ", req.params)
+            }
+            
+            /*CVSU Imus coordinates*/
+            // 14.428707, 120.947236
+
         }
         catch(error) {
             res.status(500).json({ error: error.message });

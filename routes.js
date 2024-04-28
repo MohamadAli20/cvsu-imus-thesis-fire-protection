@@ -5,6 +5,6 @@ const UserController = require("./controllers/Users");
 const FetchController = require("./controllers/FetchData");
 
 Router.get("/", UserController.index);
-Router.get("/firedata", FetchController.getFireData);
+Router.get("/:instrument/:date/:range", FetchController.getFireData);
 
 module.exports = Router;

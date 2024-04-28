@@ -79,6 +79,9 @@ main{
                 margin: 5px 0;
                 padding: 5px;
             }
+            .options input[type='date']{
+                opacity: 0.5;
+            }
             .options div{
                 margin-bottom: 10px;
                 border-bottom: 1px solid black;

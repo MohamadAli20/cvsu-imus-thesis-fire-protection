@@ -23,7 +23,7 @@
     </nav>
     <main>
         <div class="main_nav">
-            <form class="options" action="/MODIS" method="GET">
+            <form class="options" action="" method="GET">
                 <div>
                     <label>
                         <input type="radio" name="area" value="ph_firedata"> PH Fire Data
@@ -34,39 +34,38 @@
                 </div>
                 <label for="cities">City or Municipality:
                     <select id="cities" name="city">
-                        <option value="Cavite City">Cavite City</option>
-                        <option value="Kawit">Kawit</option>
-                        <option value="Noveleta">Noveleta</option>
-                        <option value="Rosario">Rosario</option>
-                        <option value="City of Bacoor">City of Bacoor</option>
-                        <option value="City of Imus">City of Imus</option>
-                        <option value="City of Dasmariñas">City of Dasmariñas</option>
-                        <option value="City of Carmona">City of Carmona</option>
-                        <option value="Silang">Silang</option>
-                        <option value="General Mariano Alvarez">General Mariano Alvarez</option>
-                        <option value="City of General Trias">City of General Trias</option>
-                        <option value="Amadeo">Amadeo</option>
-                        <option value="Indang">Indang</option>
-                        <option value="Tanza">Tanza</option>
-                        <option value="Trece Martires City">Trece Martires City</option>
-                        <option value="Tagaytay City">Tagaytay City</option>
                         <option value="Alfonso">Alfonso</option>
+                        <option value="Amadeo">Amadeo</option>
+                        <option value="Bacoor">Bacoor City</option>
+                        <option value="Carmona">Carmona City</option>
+                        <option value="Cavite City">Cavite City</option>
+                        <option value="Dasmariñas">Dasmariñas City</option>
                         <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
+                        <option value="General Mariano Alvarez">General Mariano Alvarez</option>
+                        <option value="General Trias">General Trias City</option>
+                        <option value="Imus" selected>Imus City</option>
+                        <option value="Indang">Indang</option>
+                        <option value="Kawit">Kawit</option>
                         <option value="Magallanes">Magallanes</option>
                         <option value="Maragondon">Maragondon</option>
                         <option value="Mendez">Mendez</option>
                         <option value="Naic">Naic</option>
+                        <option value="Noveleta">Noveleta</option>
+                        <option value="Rosario">Rosario</option>
+                        <option value="Silang">Silang</option>
+                        <option value="Tagaytay">Tagaytay City</option>
+                        <option value="Tanza">Tanza</option>
                         <option value="Ternate">Ternate</option>
+                        <option value="Trece Martires">Trece Martires City</option>
                     </select>
                 </label>
-                <label for="satellite-data">Instrument:
+                <label for="satellite-data">Satellite Instrument:
                     <select id="satellite-data" name="instrument">
-                        <option value="LANDSAT_NRT">LANDSAT_NRT (LANDSAT Near Real-Time, Real-Time and Ultra Real-Time *)</option>
-                        <option value="MODIS_NRT">MODIS_NRT (MODIS Near Real-Time, Real-Time and Ultra Real-Time *)</option>
+                        <option value="MODIS_NRT">MODIS_NRT (MODIS Near Real-Time, Real-Time and Ultra Real-Time)</option>
                         <option value="MODIS_SP">MODIS_SP (MODIS Standard Processing)</option>
-                        <option value="VIIRS_NOAA20_NRT">VIIRS_NOAA20_NRT (VIIRS NOAA-20 Near Real-Time, Real-Time and Ultra Real-Time *)</option>
-                        <option value="VIIRS_NOAA21_NRT">VIIRS_NOAA21_NRT (VIIRS NOAA-21 Near Real-Time, Real-Time and Ultra Real-Time *)</option>
-                        <option value="VIIRS_SNPP_NRT">VIIRS_SNPP_NRT (VIIRS Suomi-NPP Near Real-Time, Real-Time and Ultra Real-Time *)</option>
+                        <option value="VIIRS_NOAA20_NRT">VIIRS_NOAA20_NRT (VIIRS NOAA-20 Near Real-Time, Real-Time and Ultra Real-Time)</option>
+                        <option value="VIIRS_NOAA21_NRT" selected>VIIRS_NOAA21_NRT (VIIRS NOAA-21 Near Real-Time, Real-Time and Ultra Real-Time)</option>
+                        <option value="VIIRS_SNPP_NRT">VIIRS_SNPP_NRT (VIIRS Suomi-NPP Near Real-Time, Real-Time and Ultra Real-Time)</option>
                         <option value="VIIRS_SNPP_SP">VIIRS_SNPP_SP (VIIRS Suomi-NPP Standard Processing)</option>
                     </select>
                 </label>
@@ -94,11 +93,14 @@
                         <option value="10">10</option>
                     </select>
                 </label>
+                <!-- It can also be a setting icon that user can add and change map key -->
+                <!-- <p>Current Transactions: <span>144</span></p>
+                <button>Change Map Key</button>
+                <button>Add Map Key</button> -->
             </form>
         </div>
         <div class="main_body">
             <div id="map"></div>
-            
         </div>
     </main>
 </body>
