@@ -271,6 +271,15 @@ $(document).ready(async function(){
         // console.log(fireDataPh);
         addMark();
     }
+
+    /* Check if coordinates (longitude, latitude) is inside the boundary polygon */
+    var pt = turf.point([120.898896, 14.395086]);
+    var poly = turf.polygon(coordinatesBoundary.geometry.coordinates);
+
+    let result = turf.booleanPointInPolygon(pt, poly);
+    console.log(result);
+
+
     /* Get PH fire data */
 
     /* Get the firedata in the inside the four direction points */

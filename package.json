@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection#readme",
   "dependencies": {
+    "@turf/boolean-point-in-polygon": "^6.5.0",
+    "@turf/turf": "^6.5.0",
     "axios": "^1.6.8",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1"
   }
 }

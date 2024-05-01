@@ -7,6 +7,9 @@ class Users{
     index(req, res){
         res.render("index");
     }
+    fire_data(req, res){
+        res.render("fire_data");
+    }
 }
 module.exports = new Users();
 

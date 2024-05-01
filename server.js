@@ -13,7 +13,10 @@ app.use(express.static("assets"));
 
 /*Routes*/
 app.use("/", routes);
+app.use("/fire_data", routes);
 app.use("/:instrument/:date/:range", routes);
+app.use("/save_firedata", routes);
+app.use("/insert_imus_firedata", routes);
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
