@@ -41,7 +41,7 @@ $(document).ready(async function(){
 
     let area = "cavite_firedata";
     
-    /* Request information*/
+    /* Default requestion information */
     let instrument = "VIIRS_NOAA21_NRT";
     let date = currentDate;
     let range = 1;

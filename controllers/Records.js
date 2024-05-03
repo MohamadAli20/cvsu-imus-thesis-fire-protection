@@ -36,6 +36,7 @@ class Records{
     async store_imus_firedata(req, res){
         try{
             let imusFireData = [];
+            /* Change the json file */
             const phFireData = JSON.parse(fs.readFileSync('assets/source/fire_nrt_SV-C2_465499.json', 'utf8'));
             const imusBoundary = JSON.parse(fs.readFileSync('assets/geo_json/lgu/Imus.geojson', 'utf8'));
             
@@ -64,8 +65,6 @@ class Records{
             console.error('Error reading JSON file:', error);
             res.status(500).json({ error: 'Error reading JSON file' });
         }
-
-        
     }
 }
 

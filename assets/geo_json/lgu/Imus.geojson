@@ -3,6 +3,7 @@
     "type": "Feature",
     "center": [14.399411, 120.945548],
     "zoom": 13,
+    "density": 10,
     "geometry": {
         "type": "Polygon",
         "coordinates": [
