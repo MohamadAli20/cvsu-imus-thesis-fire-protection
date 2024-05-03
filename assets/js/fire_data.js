@@ -1,25 +1,6 @@
-$(document).ready(async function(){
-    
-    let coordinatesBoundary;
+    // let boundary;
     let lgu = "Imus";
 
-    /* Draw the boundary of selected LGU and Barangay */
-
-    /* LGU Boundary (By Default it is set to Imus) */
-    async function fetchLGUBoundary() {
-        try{
-            const res = await fetch(`../geo_json/lgu/${lgu}.geojson`);
-            if(!res.ok){
-                throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-            coordinatesBoundary = await res.json();
-        }
-        catch (error) {
-            console.error("Unable to fetch data:", error);
-        }
-    }
-    await fetchLGUBoundary(); /* Wait for fetchJSONData to complete before proceeding */
-    
     /* Center of the map */
     let latitude = 14.399411;
     let longitude = 120.945548;
@@ -31,8 +12,8 @@ $(document).ready(async function(){
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    /* Add the boundary GeoJSON data as a GeoJSON layer to the map */
-    let geojson = L.geoJSON(coordinatesBoundary, {
+    console.log(lguBoundary)
+    L.geoJson(lguBoundary, {
         style: {
             fill: false, // Disable fill color
             color: 'red', // Border color
@@ -40,16 +21,37 @@ $(document).ready(async function(){
             opacity: 0.8  // Border opacity
         }
     }).addTo(map);
+    
+    // control that shows state info on hover
+    let info = L.control();
 
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this.update();
+        return this._div;
+    };
+
+    // method that we will use to update the control based on feature properties passed
+    info.update = function (props) {
+        this._div.innerHTML = '<h4>Imus Fire Assessment</h4>' +  (props ? 
+            '<b>' + props.name + '</b><br/>' + props.tags.population
+            : 'Hover over a barangay');
+    };
+
+    info.addTo(map);
+    
     function getColor(d) {
-        return d === "High risk" ? '#800026' :
-               d === "Moderate risk"  ? '#FC4E2A' :
-                          '#FFEDA0';
+        return  d > 25000  ? '#BD0026' :
+                d > 15000  ? '#E31A1C' :
+                d > 10000  ? '#FC4E2A' :
+                d > 5000   ? '#FD8D3C' :
+                d > 3000   ? '#FEB24C' :
+                d > 1000   ? '#FED976' :
+                           '#FFEDA0';
     }
-
     function style(feature) {
         return {
-            fillColor: getColor(10),
+            fillColor: getColor(feature.properties.tags.population),
             weight: 2,
             opacity: 1,
             color: 'white',
@@ -57,10 +59,7 @@ $(document).ready(async function(){
             fillOpacity: 0.7
         };
     }
-    
-    L.geoJson(coordinatesBoundary, {style: style}).addTo(map);
-
-    /* Interact with map */
+    /* Interaction with the map */
     function highlightFeature(e) {
         var layer = e.target;
     
@@ -72,16 +71,25 @@ $(document).ready(async function(){
         });
     
         layer.bringToFront();
+        info.update(layer.feature.properties);
     }
+    
+    /* Add the boundary GeoJSON data as a GeoJSON layer to the map */
+    let geojson = L.geoJson(imusBarangays, {
+        style: style,
+        onEachFeature: onEachFeature
+    }).addTo(map);
 
     function resetHighlight(e) {
         geojson.resetStyle(e.target);
+        info.update();
     }
 
     function zoomToFeature(e) {
         map.fitBounds(e.target.getBounds());
     }
 
+    /* onEachFeature option to add the listeners to state layers */
     function onEachFeature(feature, layer) {
         layer.on({
             mouseover: highlightFeature,
@@ -89,57 +97,26 @@ $(document).ready(async function(){
             click: zoomToFeature
         });
     }
-    
-    geojson = L.geoJson(coordinatesBoundary, {
-        style: style,
-        onEachFeature: onEachFeature
-    }).addTo(map);
 
-    var info = L.control();
+    map.attributionControl.addAttribution('Fire data &copy; <a href="https://firms.modaps.eosdis.nasa.gov/">NASA FIRMS</a>');
 
-    info.onAdd = function (map) {
-        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-        this.update();
-        return this._div;
-    };
-
-    // method that we will use to update the control based on feature properties passed
-    info.update = function (props) {
-        this._div.innerHTML = '<h4>Cavite Fire Assessment</h4>' +  (props ?
-            '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-            : 'Hover over a state');
-    };
-
-    info.addTo(map);
-
-    function highlightFeature(e) {
-        // ...
-        info.update(lgu);
-    }
-    
-    function resetHighlight(e) {
-        // ...
-        info.update();
-    }
 
     var legend = L.control({position: 'bottomright'});
 
     legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["High risk", "Moderate risk", "Low risk"],
-            labels = [];
+            grades = [20000, 15000, 10000],
+            labels = ["High Risk", "Moderate Risk", "Low Risk"];
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + getColor(grades[i]) + '"></i> ' +
-                grades[i] + "<br/>";
+                labels[i] + "<br/>";
         }
 
         return div;
     };
 
     legend.addTo(map);
-
-})
