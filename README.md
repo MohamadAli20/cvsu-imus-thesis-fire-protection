@@ -11,7 +11,7 @@
 # Libraries
 - Axios (HTTP request and response)
 - Leaflet.js with OpenStreetMap
-- Turf.js (Point-in Polygon - check if coordinates is within the polygon / area)
+- Turf.js (Point-in Polygon - check if coordinates (lat, long) are within the polygon / area)
 - D3.js (Visualization)
 
 # API & Sources
