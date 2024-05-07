@@ -33,7 +33,7 @@ var imusBarangays = {
 		// Bayan Luma V
 		// Bayan Luma VI
 		// Bayan Luma VII
-		// 
+		// Bayan Luma VIII
 		
 		// Bucandala - from I to V
 
