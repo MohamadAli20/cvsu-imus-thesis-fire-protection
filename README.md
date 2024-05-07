@@ -1,4 +1,13 @@
 # THESIS
+## Attribution
+
+If you use or derive from this project, please provide appropriate attribution by including the following information:
+
+- Project Name: []
+- Author: [Mohamad Ali Calanda]
+- GitHub Repository: []
+
+Additionally, consider including a link back to the original GitHub repository or mentioning the project's author in your project documentation or wherever appropriate.
 
 # Technologies:
 - HTML
