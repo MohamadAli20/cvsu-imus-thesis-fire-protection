@@ -67,6 +67,8 @@ var imusBarangays = {
 		// Malagasang I-D
 		// Malagasang I-E
 		// Malagasang I-F
+		// Malagasang I-G
+		
 		// Malagasang II - from A to G
 
 
