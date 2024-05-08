@@ -9,7 +9,7 @@ If you use or derive from this project, please provide appropriate attribution b
 
 Additionally, consider including a link back to the original GitHub repository or mentioning the project's author in your project documentation or wherever appropriate.
 
-# Technologies:
+## Technologies:
 - HTML
 - CSS
 - EJS
@@ -17,16 +17,16 @@ Additionally, consider including a link back to the original GitHub repository o
 - Node.js
 - MVC Pattern
 
-# Libraries
+## Libraries
 - Axios (HTTP request and response)
 - Leaflet.js with OpenStreetMap
 - Turf.js (Point-in Polygon - check if coordinates (lat, long) are within the polygon / area)
 - D3.js (Visualization)
 
-# API & Sources
+## API & Sources
 - FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
 - Gimme Geodata BETA (https://hanshack.com/geotools/gimmegeodata/)
 
-# Sample
+## Sample
 <img src="https://drive.google.com/uc?id=1g4KyL047NdTmEvRbykq_5dnh5E_TYmHQ">
 <img src="https://drive.google.com/uc?id=1fqh2xnl4Ag_wQNPPKjy1J35MtsDSDkes">
