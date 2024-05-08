@@ -3,9 +3,9 @@
 
 If you use or derive from this project, please provide appropriate attribution by including the following information:
 
-- Project Name: []
-- Author: [Mohamad Ali Calanda]
-- GitHub Repository: []
+- Project Name: DEVELOPMENT OF A WEB-BASED PLATFORM LEVERAGING SATELLITE INSTRUMENTS, MODIS AND VIIRS FOR FIRE DATA COLLECTION AND RISK ASSESSMENT
+- Author: Mohamad Ali Calanda, Janna Mae Gensaya & Sharmine Tabuada
+- GitHub Repository: https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection.git
 
 Additionally, consider including a link back to the original GitHub repository or mentioning the project's author in your project documentation or wherever appropriate.
 
