@@ -1,23 +1,10 @@
 const mysql = require('mysql');
 const turf = require('@turf/turf');
+const config = require('../config');
 
 class Record{
     constructor(){
-        this.connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'ph_fire_data'
-        });
-    }
-    connect(){
-        this.connection.connect((err) => {
-            if (err) {
-                console.error('Error connecting to database:', err);
-                return;
-            }
-            console.log('Connected to database.');
-        });
+        this.connection = mysql.createConnection(config);
     }
     insert_firedata(firedata, callback){
         const date = new Date();
@@ -86,15 +73,6 @@ class Record{
                 }
             )
         }
-    }
-    end(){
-        this.connection.end((err) => {
-            if (err) {
-                console.error('Error ending connection:', err);
-                return;
-            }
-            console.log('Connection closed.');
-        });
     }
 }
 
