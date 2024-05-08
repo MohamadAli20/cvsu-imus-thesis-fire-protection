@@ -29,4 +29,4 @@ Additionally, consider including a link back to the original GitHub repository o
 
 ## Sample
 <img src="https://drive.google.com/uc?id=1g4KyL047NdTmEvRbykq_5dnh5E_TYmHQ">
-<img src="https://drive.google.com/uc?id=1fqh2xnl4Ag_wQNPPKjy1J35MtsDSDkes">
+<img src="https://drive.google.com/uc?id=1Im1_FCIvXFovm1P4zBFyusU65GBtFGdu">
