@@ -62,8 +62,13 @@ var imusBarangays = {
 
 		// Malagasang I - from A to G
 		{"type":"Feature","id":"relation/1615052","properties":{"type":"relation","id":16150552,"tags":{"admin_level":"10","alt_name":"Malagasang I-A","boundary":"administrative","name":"Malagasang I-A","old_ref":"042109012","population":"17844","population:date":"2020-05-01","ref":"0402109012","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang I-A"},"geometry":{"type":"Polygon","coordinates":[[[120.923327,14.397880],[120.927800,14.398227],[120.928723, 14.398644],[120.931363,14.397794],[120.931104,14.396442],[120.931705,14.395652],[120.924369,14.393719],[120.923337,14.393988],[120.922952,14.395134]]]}},
-
-
+		// Malagasang I-B
+		// Malagasang I-C
+		// Malagasang I-D
+		// Malagasang I-E
+		// Malagasang I-F
+		// Malagasang I-G
+		
 		// Malagasang II - from A to G
 
 
