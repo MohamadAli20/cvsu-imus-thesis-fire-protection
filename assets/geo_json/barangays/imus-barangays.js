@@ -81,7 +81,7 @@ var imusBarangays = {
 		// Mariano Espeleta - from I to III
 		// Mariano Espeleta I
 		// Mariano Espeleta II
-		
+		// Mariano Espeleta III
 		
 		// Medicion I - from A to D
 
