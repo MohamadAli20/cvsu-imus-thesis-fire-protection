@@ -90,8 +90,12 @@ var imusBarangays = {
 		// Medicion I-D
 		
 		// Medicion II - from A to F
-
-
+		// Medicion II-A
+		// Medicion II-B
+		// Medicion II-C
+		// Medicion II-D
+		// Medicion II-E
+		
 		// Pag-asa - from I to III
 
 
