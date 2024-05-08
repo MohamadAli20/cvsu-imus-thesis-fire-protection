@@ -79,7 +79,7 @@ var imusBarangays = {
 		// Malagasang II-G
 		
 		// Mariano Espeleta - from I to III
-
+		// Mariano Espeleta I
 
 		// Medicion I - from A to D
 
