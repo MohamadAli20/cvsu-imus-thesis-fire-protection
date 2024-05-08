@@ -28,5 +28,9 @@ Additionally, consider including a link back to the original GitHub repository o
 - Gimme Geodata BETA (https://hanshack.com/geotools/gimmegeodata/)
 
 ## Sample
-<img src="https://drive.google.com/uc?id=1g4KyL047NdTmEvRbykq_5dnh5E_TYmHQ">
+### Philippines Fire Data
+<img src="https://drive.google.com/uc?id=1zF3o89zmUzcjVna03XSNe30vX86lMiTo">
+### Imus City, Cavite Fire Data
 <img src="https://drive.google.com/uc?id=1Im1_FCIvXFovm1P4zBFyusU65GBtFGdu">
+### Imus City, Cavite Choropleth Map
+<img src="https://drive.google.com/uc?id=1_hsBGA_TIK07UyrHuVYqpiX6R5nHnD9d">
