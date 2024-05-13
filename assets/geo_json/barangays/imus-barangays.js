@@ -1,6 +1,7 @@
 /* Sources:
 * Geojson - https://hanshack.com/geotools/gimmegeodata/
 * List of Imus barangays - https://www.philatlas.com/luzon/r04a/cavite/imus.html
+* Google Map
 */
 var imusBarangays = {
 	"type": "FeatureCollection",
