@@ -101,7 +101,18 @@ var imusBarangays = {
 			
 			[]
 		]]}},
-		// Malagasang I-D
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Anabu 1-B","boundary":"administrative","name":"Anabu I-B","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Anabu I-B"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.930805,14.388523],
+			[120.930913,14.387650],
+			[120.929968,14.384990],
+			[120.929947,14.384302],
+			[120.930224,14.383618],
+			[120.925118,14.383118],
+			[120.924666,14.387521],
+			
+			[]
+		]]}},
 		// Malagasang I-E
 		// Malagasang I-F
 		// Malagasang I-G
