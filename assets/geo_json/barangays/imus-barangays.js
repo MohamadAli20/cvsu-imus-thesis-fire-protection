@@ -71,7 +71,17 @@ var imusBarangays = {
 
 		// Malagasang I - from A to G
 		{"type":"Feature","id":"relation/1615052","properties":{"type":"relation","id":16150552,"tags":{"admin_level":"10","alt_name":"Malagasang I-A","boundary":"administrative","name":"Malagasang I-A","old_ref":"042109012","population":"17844","population:date":"2020-05-01","ref":"0402109012","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang I-A"},"geometry":{"type":"Polygon","coordinates":[[[120.923327,14.397880],[120.927800,14.398227],[120.928723, 14.398644],[120.931363,14.397794],[120.931104,14.396442],[120.931705,14.395652],[120.924369,14.393719],[120.923337,14.393988],[120.922952,14.395134]]]}},
-		// Malagasang I-B
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang I-B","boundary":"administrative","name":"Malagasang I-B","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang I-B"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.923295,14.393763],
+			[120.924302,14.393614],
+			[120.931856,14.395610],
+			[120.932586,14.394924],
+			[120.932414,14.394279],
+			[120.932822,14.393823],
+			
+			[]
+		]]}},
 		// Malagasang I-C
 		// Malagasang I-D
 		// Malagasang I-E
@@ -137,7 +147,6 @@ var imusBarangays = {
 			[120.941362,14.362523],
 			[120.941920,14.374163],
 			[120.943165,14.376280],
-			
 			
 			[]
 		]]}},
