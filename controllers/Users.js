@@ -1,4 +1,4 @@
-const model = require("../models/User");
+// const model = require("../models/User");
 // const multer  = require('multer')
 // const upload = multer({ dest: 'uploads/' })
 
