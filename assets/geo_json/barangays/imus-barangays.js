@@ -195,7 +195,13 @@ var imusBarangays = {
 			[120.915055,14.365699],
 		]]}},
 		
-		// Malagasang II-D
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang II-D","boundary":"administrative","name":"Malagasang II-D","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang II-D"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.915140,14.364454],
+			[120.915183,14.364558],
+			
+			[]
+		]]}},
 		// Malagasang II-E
 		// Malagasang II-F
 		// Malagasang II-G
