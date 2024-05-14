@@ -101,7 +101,7 @@ var imusBarangays = {
 			
 			[]
 		]]}},
-		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Anabu 1-B","boundary":"administrative","name":"Anabu I-B","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Anabu I-B"},"geometry":{"type":"Polygon","coordinates":
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang I-D","boundary":"administrative","name":"Malagasang I-D","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang I-D"},"geometry":{"type":"Polygon","coordinates":
 		[[
 			[120.930805,14.388523],
 			[120.930913,14.387650],
@@ -113,7 +113,18 @@ var imusBarangays = {
 			
 			[]
 		]]}},
-		// Malagasang I-E
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang I-E","boundary":"administrative","name":"Malagasang I-E","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang I-E"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.925120,14.383056],
+			[120.930268,14.383076],
+			[120.930033,14.382370],
+			[120.930182,14.382100],
+			[120.931319,14.381021],
+			[120.925312,14.380584],
+			[120.925548,14.381934],
+			
+			[]
+		]]}},
 		// Malagasang I-F
 		// Malagasang I-G
 		
