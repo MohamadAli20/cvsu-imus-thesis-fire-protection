@@ -268,7 +268,17 @@ var imusBarangays = {
 			[120.966081,14.396815],
 		]]}},
 		
-		// Mariano Espeleta II
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Mariano Espeleta II","boundary":"administrative","name":"Mariano Espeleta II","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Mariano Espeleta II"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.966961,14.395449],
+			[120.968741,14.396193],
+			[120.970951,14.394177],
+			[120.971187,14.393098],
+			[120.969212,14.392992],
+			[120.967743,14.393848],
+			[120.967487,14.394775],
+		]]}},
+		
 		// Mariano Espeleta III
 		
 		// Medicion I - from A to D
