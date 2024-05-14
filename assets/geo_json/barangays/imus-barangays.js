@@ -233,6 +233,18 @@ var imusBarangays = {
 			[120.923973,14.371535],
 			[120.923728,14.372551],
 		]]}},
+
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang II-F","boundary":"administrative","name":"Malagasang II-F","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang II-F"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.926272,14.358778],
+			[120.929645,14.358822],
+			[120.929945,14.358155],
+			[120.929817,14.357325],
+			[120.929945,14.358155],
+			[120.929648,14.358820],
+			
+			[]
+		]]}},
 		
 		// Malagasang II-F
 		// Malagasang II-G
