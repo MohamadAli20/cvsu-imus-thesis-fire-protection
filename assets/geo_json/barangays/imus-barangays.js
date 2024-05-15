@@ -361,7 +361,23 @@ var imusBarangays = {
 		// Medicion II-F
 		
 		// Pag-asa - from I to III
-		// Pag-asa I
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Pag-asa I","boundary":"administrative","name":"Pag-asa I","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Pag-asa I"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.915871,14.432290],
+			[120.918820,14.432197],
+			[120.918917,14.427971],
+			[120.917169,14.427907],
+			[120.917125,14.427336],
+			[120.915227,14.427377],
+			[120.915302,14.428748],
+			[120.915635,14.429039],
+			[120.915764,14.429548],
+			[120.915603,14.430369],
+			[120.915785,14.430703],
+			[120.915699,14.431554],
+			[120.915828,14.431761],
+		]]}},
+		
 		// Pag-asa II
 		// Pag-asa III
 		 
