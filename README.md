@@ -35,4 +35,4 @@ Additionally, consider including a link back to the original GitHub repository o
 <img src="https://drive.google.com/uc?id=1Im1_FCIvXFovm1P4zBFyusU65GBtFGdu">
 
 ### Imus City, Cavite Choropleth Map
-<img src="https://drive.google.com/uc?id=1_hsBGA_TIK07UyrHuVYqpiX6R5nHnD9d">
+<img src="https://drive.google.com/uc?id=1WrqTU8R0opHsudsQdWc_tF3g4MicJRBM">
