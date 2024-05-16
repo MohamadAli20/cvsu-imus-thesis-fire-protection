@@ -167,7 +167,11 @@ var imusBarangays = {
 			[120.930355,14.408786],
 		]]}},
 		
-		// Bayan Luma VII
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Bayan Luma VII","boundary":"administrative","name":"Bayan Luma VII","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Bayan Luma VII"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[],
+			[]
+		]]}},
 		// Bayan Luma VIII
 		
 		// Bucandala - from I to V
