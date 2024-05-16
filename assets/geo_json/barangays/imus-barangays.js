@@ -121,7 +121,29 @@ var imusBarangays = {
 			[120.932542,14.408060],
 		]]}},
 		
-		// Bayan Luma V
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Bayan Luma V","boundary":"administrative","name":"Bayan Luma V","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Bayan Luma V"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.928917,14.417102],
+			[120.935510,14.416783],
+			[120.935558,14.415740],
+			[120.936896,14.415512],
+			[120.936944,14.414840],
+			[120.936800,14.414490],
+			[120.936812,14.414281],
+			[120.936765,14.413859],
+			[120.936845,14.413069],
+			[120.934549,14.412830],
+			[120.934571,14.412345],
+			[120.933110,14.411842],
+			[120.932532,14.412142],
+			[120.932543,14.411377],
+			[120.930676,14.411075],
+			[120.930740,14.413047],
+			[120.928520,14.413181],
+			[120.928723,14.414845],
+			[120.928445,14.415333],
+		]]}},
+		
 		// Bayan Luma VI
 		// Bayan Luma VII
 		// Bayan Luma VIII
