@@ -146,7 +146,17 @@ var imusBarangays = {
 			[120.923729,14.372552],
 		]]}},
 		
-		// Malagasang II-F
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang II-F","boundary":"administrative","name":"Malagasang II-F","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang II-F"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.926275,14.358780],
+			[120.929644,14.358820],
+			[120.929947,14.358155],
+			[120.929817,14.357324],
+			[120.930033,14.356659],
+			[120.929947,14.356077],
+			[120.924104,14.354805],
+		]]}},
+		
 		// Malagasang II-G
 		
 		// Mariano Espeleta - from I to III
