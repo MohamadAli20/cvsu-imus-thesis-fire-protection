@@ -157,7 +157,14 @@ var imusBarangays = {
 			[120.924104,14.354805],
 		]]}},
 		
-		// Malagasang II-G
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Malagasang II-G","boundary":"administrative","name":"Malagasang II-G","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Malagasang II-G"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.919690,14.358614],
+			[120.926299,14.358863],
+			[120.924025,14.354662],
+			[120.920505,14.354247],
+			[120.919485,14.357075],
+		]]}},
 		
 		// Mariano Espeleta - from I to III
 		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Mariano Espeleta I","boundary":"administrative","name":"Mariano Espeleta I","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Mariano Espeleta I"},"geometry":{"type":"Polygon","coordinates": [[ [120.965588,14.397190], [120.967749,14.398430], [120.968205,14.397521], [120.968484,14.396215], [120.967003,14.395653], [120.966833,14.395900], [120.966124,14.396296], [120.966124,14.396672], [120.966081,14.396815], ]]}},
