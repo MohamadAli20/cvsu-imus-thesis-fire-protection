@@ -6,6 +6,23 @@ class Record{
     constructor(){
         this.connection = mysql.createConnection(config);
     }
+    /* Imus Fire Data query */
+    select_firedata(callback){
+        this.connection.query(
+            'SELECT * FROM imus_data',
+            (error, row) => {
+                if(error){
+                    console.error(error);
+                    callback(error, null);
+                }
+                if(row){
+                    console.log(row);
+                    callback(null, row);
+                }
+            }
+        )
+    }
+
     insert_firedata(firedata, callback){
         const date = new Date();
         const today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;

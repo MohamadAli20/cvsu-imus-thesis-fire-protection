@@ -1,13 +1,23 @@
+const { name } = require("ejs");
+const model = require("../models/Record");
+
 class Api{
     fetchFireData(req, res){
-        console.log(req.params.name_of_place);
+        let namePlace = req.params.name_of_place;
 
-        const responseData = [
-            { name: "Imus", data: "This is data" },
-            { name: "Imus", data: "This is data" },
-            { name: "Imus", data: "This is data" }
-        ]
-        res.json(responseData)
+        const responseData = [];
+        
+        if(namePlace === "imus"){
+            model.select_firedata((error, row) => {
+                if(error){
+                    console.error(error);
+                }
+                if(row){
+                    res.json(row);
+                }
+            })
+        }
+        // res.json(responseData)
     }
 }
 
