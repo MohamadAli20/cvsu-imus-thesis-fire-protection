@@ -161,7 +161,19 @@ var imusBarangays = {
 			[120.923509,14.442754],
 		]]}},
 		
-		// Medicion II-B
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Medicion II-B","boundary":"administrative","name":"Medicion II-B","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Medicion II-B"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.920259,14.439992],
+			[120.921812,14.440202],
+			[120.922190,14.442027],
+			[120.923477,14.442692],
+			[120.923510,14.441860],
+			[120.923939,14.441767],
+			[120.924282,14.441736],
+			[120.924529,14.437902],
+			[120.921150,14.437424],
+		]]}},
+		
 		// Medicion II-C
 		// Medicion II-D
 		// Medicion II-E
