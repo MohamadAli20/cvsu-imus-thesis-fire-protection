@@ -305,7 +305,31 @@ var imusBarangays = {
 		
 		// Toclong I - from A to C
 		// Toclong I-A
-		// Toclong I-B
+							 
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Toclong I-B","boundary":"administrative","name":"Toclong I-B","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Toclong I-B"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.933680,14.438422],
+			[120.934153,14.438389],
+			[120.934679,14.438566],
+			[120.935193,14.435803],
+			[120.936905,14.432822],
+			[120.934806,14.432063],
+			[120.934614,14.432925],
+			[120.934796,14.433350],
+			[120.934239,14.433994],
+			[120.933981,14.434379],
+			[120.934260,14.434598],
+			[120.934164,14.434887],
+			[120.934120,14.435148],
+			[120.934012,14.435211],
+			[120.933927,14.435522],
+			[120.933981,14.435875],
+			[120.933295,14.436645],
+			[120.933487,14.437081],
+			[120.933370,14.437320],
+			[120.933499,14.438026],				 
+		]]}},
+
 		// Toclong I-C
 		
 		// Toclong II - from A to B
