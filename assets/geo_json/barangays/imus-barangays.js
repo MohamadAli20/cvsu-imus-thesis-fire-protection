@@ -136,7 +136,31 @@ var imusBarangays = {
 		]]}},
 		
 		// Medicion II - from A to F
-		// Medicion II-A
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Medicion II-A","boundary":"administrative","name":"Medicion II-A","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Medicion II-A"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.923616,14.443533],
+			[120.923795,14.443569],
+			[120.924025,14.443564],
+			[120.924202,14.443434],
+			[120.924309,14.443195],
+			[120.924566,14.443009],
+			[120.924947,14.442884],
+			[120.925269,14.442936],
+			[120.925515,14.442852],
+			[120.925334,14.442322],
+			[120.926799,14.441518],
+			[120.926625,14.441294],
+			[120.926524,14.440697],
+			[120.926567,14.440359],
+			[120.926266,14.439834],
+			[120.926225,14.439632],
+			[120.926299,14.439368],
+			[120.924570,14.437914],
+			[120.924293,14.441704],
+			[120.923574,14.441850],
+			[120.923509,14.442754]
+		]]}},
+		
 		// Medicion II-B
 		// Medicion II-C
 		// Medicion II-D
