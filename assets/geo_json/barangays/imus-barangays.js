@@ -126,7 +126,14 @@ var imusBarangays = {
 			[120.930016,14.433050],
 		]]}},
 		
-		// Medicion I-D
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Medicion I-D","boundary":"administrative","name":"Medicion I-D","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Medicion I-D"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.923413,14.437784],
+			[120.924572,14.437930],
+			[120.926105,14.439201],
+			[120.929979,14.433034],
+			[120.924635,14.432484],
+		]]}},
 		
 		// Medicion II - from A to F
 		// Medicion II-A
