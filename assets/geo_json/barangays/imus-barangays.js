@@ -239,7 +239,14 @@ var imusBarangays = {
 			[120.918694,14.441615],
 		]]}},
 
-		// Medicion II-E
+		{"type":"Feature","id":"relation/3282229","properties":{"type":"relation","id":3282229,"tags":{"admin_level":"10","alt_name":"Medicion II-E","boundary":"administrative","name":"Medicion II-E","old_ref":"042109001","population":"14097","population:date":"2020-05-01","ref":"0402109001","source:population":"Philippine Statistics Authority","type":"boundary"},"relations":[],"meta":{},"name":"Medicion II-E"},"geometry":{"type":"Polygon","coordinates":
+		[[
+			[120.922623,14.443058],
+			[120.924919,14.443573],
+			[120.925766,14.440948],
+			[120.925247,14.439135],
+		]]]},
+
 		// Medicion II-F
 		
 		// Pag-asa - from I to III
