@@ -1,26 +1,27 @@
-const axios = require('axios');
 const turf = require('@turf/turf');
 const fs = require('fs');
-const csv = require('csv-parser');
 const model = require("../models/Record");
 
 class Records{
 
-    // csv_to_db(req, res){
-    //     var pt = turf.point([-77, 44]);
-    //     var poly = turf.polygon([[
-    //     [-81, 41],   
-    //     [-81, 47],
-    //     [-72, 47],
-    //     [-72, 41],
-    //     [-81, 41]
-    //     ]]);
+    get_all_firedata(req, res){
 
-    //     let result = turf.booleanPointInPolygon(pt, poly);
-    //     //= true
-    //     res.json(result);
-    // }
-    /* Store Philippines fire data to MySQL */
+        let details = req.body;
+
+        model.select_firedata(details, (error, row) => {
+            if(error){
+                console.error(error);
+            }
+            if(row){
+                res.json(row);
+            }
+        })
+    }
+
+    /* 
+    * Below methods are used to store firedata in the database
+    * Fire data is filtered to get only the fire data in the Cavite
+    */
     async store_firedata(req, res) {
         try{
             let filteredData = [];

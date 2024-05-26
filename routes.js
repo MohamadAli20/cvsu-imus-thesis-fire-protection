@@ -9,6 +9,9 @@ const ApiController = require("./controllers/Api");
 Router.get("/", UserController.index);
 Router.get("/fire_data", UserController.fire_data);
 Router.get("/data_logging", UserController.data_logging);
+Router.post("/retrieve_firedata", RecordController.get_all_firedata);
+
+
 Router.get("/:instrument/:date/:range", FetchController.getFireData);
 Router.get("/save_firedata", RecordController.store_firedata);
 Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);

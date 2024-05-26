@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/data_logging.css">
+	<script src="/js/data_logging.js"></script>
 </head>
 <body>
     <nav>
@@ -24,46 +25,70 @@
         </div>
     </nav>
     <main>
-        <div class="main_nav">
-            
+		<div class="main_nav">
+            <form class="options">
+                <label for="cities">City or Municipality:
+                    <select id="cities" name="municipality_city">
+						<option value="" selected>All Local Government Unit</option>
+						<option value="Imus">Imus City</option>
+                        <option value="Alfonso">Alfonso</option>
+                        <option value="Amadeo">Amadeo</option>
+                        <option value="Bacoor">Bacoor City</option>
+                        <option value="Carmona">Carmona City</option>
+                        <option value="Cavite City">Cavite City</option>
+                        <option value="Dasmariñas">Dasmariñas City</option>
+                        <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
+                        <option value="General Mariano Alvarez">General Mariano Alvarez</option>
+                        <option value="General Trias">General Trias City</option>
+                        
+                        <option value="Indang">Indang</option>
+                        <option value="Kawit">Kawit</option>
+                        <option value="Magallanes">Magallanes</option>
+                        <option value="Maragondon">Maragondon</option>
+                        <option value="Mendez">Mendez</option>
+                        <option value="Naic">Naic</option>
+                        <option value="Noveleta">Noveleta</option>
+                        <option value="Rosario">Rosario</option>
+                        <option value="Silang">Silang</option>
+                        <option value="Tagaytay">Tagaytay City</option>
+                        <option value="Tanza">Tanza</option>
+                        <option value="Ternate">Ternate</option>
+                        <option value="Trece Martires">Trece Martires City</option>
+                    </select>
+                </label>
+                <label for="satellite-data">Instrument:
+                    <select id="satellite-data" name="instrument">
+						<option value="" selected>All Instruments</option>
+                        <option value="MODIS">MODIS</option>
+                        <option value="VIIRS">VIIRS</option>
+                    </select>
+                </label>
+                <label>Year
+                    <select name="year">
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024" selected>2024</option>
+					</select>
+                </label>
+				<label>Confidence
+					<input type="number" min="0" max="100" name="confidence" value="50">
+				</label>
+            </form>
         </div>
         <div class="main_body">
-            <table>
+            <table class="table-content">
                 <tr>
-                  <th>Company</th>
-                  <th>Contact</th>
-                  <th>Country</th>
+					<th>LGU</th>
+					<th>Latitude</th>
+					<th>Longitude</th>
+					<th>Acquired Date</th>
+					<th>Acquired Time</th>
+					<th>Instrument</th>
+					<th>Confidence</th>
                 </tr>
-                <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                  <td>Germany</td>
-                </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                  <td>Mexico</td>
-                </tr>
-                <tr>
-                  <td>Ernst Handel</td>
-                  <td>Roland Mendel</td>
-                  <td>Austria</td>
-                </tr>
-                <tr>
-                  <td>Island Trading</td>
-                  <td>Helen Bennett</td>
-                  <td>UK</td>
-                </tr>
-                <tr>
-                  <td>Laughing Bacchus Winecellars</td>
-                  <td>Yoshi Tannamuri</td>
-                  <td>Canada</td>
-                </tr>
-                <tr>
-                  <td>Magazzini Alimentari Riuniti</td>
-                  <td>Giovanni Rovelli</td>
-                  <td>Italy</td>
-                </tr>
+				<!-- The fire data inserted here through AJAX -->
               </table>
         </div>
     </main>

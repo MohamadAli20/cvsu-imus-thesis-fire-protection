@@ -11,6 +11,11 @@ app.set("view engine", "ejs");
 /*serving static content*/
 app.use(express.static("assets"));
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+// Middleware to parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true }));
+
 /*Routes*/
 app.use("/", routes);
 app.use("/fire_data", routes);

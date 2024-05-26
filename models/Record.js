@@ -1,29 +1,61 @@
 const mysql = require('mysql');
-const turf = require('@turf/turf');
 const config = require('../config');
 
 class Record{
     constructor(){
         this.connection = mysql.createConnection(config);
     }
-    printPlace(req, res){}
-    /* Imus Fire Data query */
-    select_firedata(callback){
+    /* Imus fire data query */
+    select_firedata(details, callback){
+        console.log(details);
+        // {
+        //     municipalityCity: '',
+        //     instrument: '',
+        //     year: '2024',
+        //     confidence: '50'
+        //  }
+        let values = [];
+        let year = details.year;
+        let query = `SELECT * FROM cavite${year}`;
+        let orderBy = ` ORDER BY acq_date DESC`;
+
+        if(details.confidence === ''){
+            query += ` WHERE confidence >= ?`;
+            values.push(0);
+        }
+        if(details.confidence !== ''){
+            query += ` WHERE confidence >= ?`;
+            values.push(details.confidence);
+        }
+        if(details.municipalityCity !== ''){
+            query += ` AND name_of_place = ?`;
+            values.push(details.municipalityCity);
+        }
+        if(details.instrument !== ''){
+            query += ` AND instrument = ?`;
+            values.push(details.instrument);
+        }
+
+        query += orderBy;
+        console.log(query);
         this.connection.query(
-            'SELECT * FROM imus_data',
+            query,
+            values,
             (error, row) => {
                 if(error){
                     console.error(error);
                     callback(error, null);
                 }
                 if(row){
-                    console.log(row);
                     callback(null, row);
                 }
             }
         )
     }
 
+    /*
+    * Below methods are use to store fire data from FIRMS record from 2020 to May 25, 2024 
+    */
     insert_firedata(firedata, callback){
         const date = new Date();
         const today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
