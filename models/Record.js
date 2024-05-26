@@ -30,10 +30,11 @@ class Record{
 
         for(let i = 0; i < firedata.length; i++){
             this.connection.query(
-                'INSERT INTO cavite2024(latitude, longitude, acq_date, acq_time, track, brightness, satellite, instrument, confidence, daynight, version, bright_t31, scan, frp, created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', 
+                'INSERT INTO cavite2024(latitude, longitude, name_of_place, acq_date, acq_time, track, brightness, satellite, instrument, confidence, daynight, version, bright_t31, scan, frp, created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', 
                 [
                     firedata[i].latitude,
                     firedata[i].longitude,
+                    firedata[i].lgu,
                     firedata[i].acq_date,
                     firedata[i].acq_time,
                     firedata[i].track,

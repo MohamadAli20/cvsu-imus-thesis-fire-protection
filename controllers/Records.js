@@ -61,7 +61,7 @@ class Records{
                 }
             }
             console.log(caviteFireData.length)
-            console.log(caviteFireData);
+            // console.log(caviteFireData);
 
             // model.insert_firedata(caviteFireData, (error) => {
             //     if(error){
