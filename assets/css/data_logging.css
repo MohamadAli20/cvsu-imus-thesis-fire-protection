@@ -1,0 +1,36 @@
+main{
+    width: 100%;
+    height: 90%;
+    white-space: nowrap;
+    font-size: 0;
+}
+.main_nav, .main_body{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    font-size: 16px;
+}
+.main_nav{
+    width: 20%;
+    border-right: 1px solid black;
+    padding: 20px;
+}
+.main_body{
+    width: 80%;
+    padding: 20px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }

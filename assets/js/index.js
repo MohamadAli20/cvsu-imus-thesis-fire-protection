@@ -11,6 +11,7 @@ $(document).ready(async function(){
     async function fetchLGUBoundary() {
         try{
             const res = await fetch(`../geo_json/lgu/${lgu}.geojson`);
+            // const res = await fetch(`../geo_json/cavite/cavite.geojson`);
             if(!res.ok){
                 throw new Error(`HTTP error! Status: ${res.status}`);
             }
@@ -35,9 +36,14 @@ $(document).ready(async function(){
     let imusFireData = [];
 
     /* Center of the map */
-    let latitude = 14.399411;
-    let longitude = 120.945548;
-    let zoom = 13;
+    // let latitude = 14.399411;
+    // let longitude = 120.945548;
+    // let zoom = 13;
+
+    /* Coordinates of Cavite and center */
+    let latitude = 14.269827;
+    let longitude = 120.852260;
+    let zoom = 10;
 
     let area = "cavite_firedata";
     

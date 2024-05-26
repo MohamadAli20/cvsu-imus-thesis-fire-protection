@@ -10,6 +10,9 @@ class Users{
     fire_data(req, res){
         res.render("fire_data");
     }
+    data_logging(req, res){
+        res.render("data_logging");
+    }
 }
 module.exports = new Users();
 
