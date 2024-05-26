@@ -17,9 +17,6 @@ main{
     border-right: 1px solid black;
     padding: 20px;
 }
-    .main_nav .options{
-        height: 10vh;
-    }
         .options select, 
         .options label,
         .options input[type='date'],

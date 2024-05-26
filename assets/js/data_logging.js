@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+    /* 
+    * Set interval to automatically request fire data from FIRMS API
+    */
+    setInterval(function(){
+       
+    }, 2400);
+
     let convertToTime = (time) => {
         let timeStr = time.toString();
         let hour = timeStr.slice(0, 2);
