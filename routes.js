@@ -4,7 +4,7 @@ const Router = express.Router();
 const UserController = require("./controllers/Users");
 const FetchController = require("./controllers/FetchData");
 const RecordController = require("./controllers/Records");
-const ApiController = require("./controllers/Api");
+const ApiController = require("./controllers/ApiRequests");
 
 Router.get("/", UserController.index);
 Router.get("/fire_data", UserController.fire_data);
@@ -19,6 +19,7 @@ Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 // Router.get("/api/:name_of_place", ApiController.fetchFireData);
 Router.post("/request", RecordController.getFireData);
 
-Router.get("/api/:place", ApiController.printPlace);
+/* API endpoints */
+Router.get("/api/:year", ApiController.get_by_lgu);
 
 module.exports = Router;

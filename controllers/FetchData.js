@@ -26,7 +26,6 @@ class FetchData{
         }
     }
 
-
     async getFireData(req, res) {
         try{
             /* Get date today */
@@ -40,8 +39,8 @@ class FetchData{
             const { instrument, date, range } = req.params;
             // console.log(req.params);
             if(date !== currentDate){
-                // const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/c1cfea789591c42cfe9feb7c959d5719/${instrument}/PHL/${range}/${date}`);
-                const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/6ebaa525eb5f78cb9d68576f8599d93e/${instrument}/PHL/${range}/${date}`);
+                const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/c1cfea789591c42cfe9feb7c959d5719/${instrument}/PHL/${range}/${date}`);
+                // const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/6ebaa525eb5f78cb9d68576f8599d93e/${instrument}/PHL/${range}/${date}`);
                 res.json(response.data);
                 // console.log(response.data);
                 // console.log("Date selected: ", req.params); 

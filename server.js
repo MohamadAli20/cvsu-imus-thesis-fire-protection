@@ -17,11 +17,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /*Routes*/
-app.use("/", routes);
+app.use("/", routes); /* Base path*/
+// app.use("/api/:year/:lgu", routes); /* For API endpoints */
+
 app.use("/fire_data", routes);
 app.use("/:instrument/:date/:range", routes);
 app.use("/save_firedata", routes);
 app.use("/insert_imus_firedata", routes);
+
+
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
