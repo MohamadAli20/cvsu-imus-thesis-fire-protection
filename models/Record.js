@@ -44,15 +44,14 @@ class Record{
             }
         )
     }
-    verify_if_duplicates(caviteFireData, callback){
-        for(let i = 0; i < caviteFireData.length; i++){
-            let lat = caviteFireData[i].latitude;
-            let long = caviteFireData[i].longitude
-            let time = caviteFireData[i].acq_time;
+    verify_if_duplicates(callback){
+        // for(let i = 0; i < caviteFireData.length; i++){
+        //     let lat = caviteFireData[i].latitude;
+        //     let long = caviteFireData[i].longitude
+        //     let time = caviteFireData[i].acq_time;
             
             this.connection.query(
-                `SELECT * FROM cavite2024 WHERE latitude = ? AND longitude = ? AND acq_time = ?`,
-                [ lat, long, time ],
+                `SELECT * FROM cavite2024`,
                 (error, row) => {
                     if(error){
                         callback(error, null);
@@ -62,8 +61,7 @@ class Record{
                     }
                 }
             )
-        }
-        
+        // }
     }
     
 
