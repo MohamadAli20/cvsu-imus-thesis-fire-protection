@@ -56,16 +56,46 @@ class ApiRequest{
             callback(null, rows);
         });
     }
-    select_by_year(year, lgu, callback){
-        // Query builder
+    select_by_year(obj, callback){
+        let values = [];
+        let year = obj.year;
+        let lgu = obj.lgu;
+        let instrument = obj.instrument;
+        let confidence = obj.confidence;
+
         let query = `SELECT * FROM cavite${year}`;
-        if(lgu !== undefined){
+        if(lgu && !instrument && !confidence){
             query += ` WHERE name_of_place = ?`;
+            values.push(lgu);
+        }
+        else if(instrument && !lgu && !confidence){
+            query += ` WHERE instrument = ?`;
+            values.push(instrument);
+        }
+        else if(confidence && !lgu && !instrument){
+            query += ` WHERE confidence >= ?`;
+            values.push(confidence);
+        }
+        else if(lgu && confidence && !instrument){
+            query += ` WHERE name_of_place = ? AND confidence >= ?`;
+            values.push(lgu, confidence);
+        }
+        else if(lgu && !confidence && instrument){
+            query += ` WHERE name_of_place = ? AND instrument = ?`;
+            values.push(lgu, instrument);
+        }
+        else if(!lgu && confidence && instrument){
+            query += ` WHERE instrument = ? AND confidence >= ?`;
+            values.push(instrument, confidence);
+        }
+        else if(lgu && confidence && instrument){
+            query += ` WHERE name_of_place = ? AND instrument = ? AND confidence >= ?`;
+            values.push(lgu, instrument, confidence);
         }
         
         this.connection.query(
             query,
-            [ lgu ],
+            values,
             (error, row) => {
                 if(error){
                     callback(error, null);

@@ -27,8 +27,16 @@ class ApiRequests{
     get_by_year(req, res){
         const year = req.params.year;
         const lgu = req.query.lgu;
+        const instrument = req.query.instrument;
+        const confidence = req.query.confidence;
+        let obj = {
+            year: year,
+            lgu: lgu,
+            instrument: instrument,
+            confidence: confidence
+        }
 
-        model.select_by_year(year, lgu, (error, row) => {
+        model.select_by_year(obj, (error, row) => {
             if(error){
                 console.error(error);
             }
