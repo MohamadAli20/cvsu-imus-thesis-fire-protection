@@ -7,9 +7,12 @@ class ApiRequests{
     get_cavite_firedata(req, res){
         const lgu = req.query.lgu;
         const instrument = req.query.instrument;
+        const confidence = req.query.confidence;
+
         let obj = {
             lgu: lgu,
-            instrument: instrument 
+            instrument: instrument,
+            confidence: confidence
         }
 
         model.select_cavite_firedata(obj, (error, row) => {
