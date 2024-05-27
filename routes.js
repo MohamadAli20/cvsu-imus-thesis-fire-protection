@@ -20,6 +20,7 @@ Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 Router.post("/request", RecordController.getFireData);
 
 /* API endpoints */
-Router.get("/api/:year", ApiController.get_by_lgu);
+Router.get("/api/cavite_firedata", ApiController.get_cavite_firedata);
+Router.get("/api/:year", ApiController.get_by_year);
 
 module.exports = Router;
