@@ -5,38 +5,46 @@ class ApiRequest{
     constructor(){
         this.connection = mysql.createConnection(config);
     }
-    select_cavite_firedata(lgu, callback){
-        let years = [ 2020, 2021, 2022, 2023, 2024 ];
+    select_cavite_firedata(obj, callback) {
+        let years = [2020, 2021, 2022, 2023, 2024];
         let values = [];
         let query = "";
-
-        for(let i = 0; i < years.length; i++){
-            values.push(lgu);
-            query += `(SELECT * FROM cavite${years[i]} `
+        let lgu = obj.lgu;
+        let instrument = obj.instrument;
+    
+        for (let i = 0; i < years.length; i++) {
+            query += `(SELECT * FROM cavite${years[i]}`;
             
-            if(lgu){
-                query += ` WHERE name_of_place = ?`
+            // Construct the WHERE clause
+            if (lgu && instrument === undefined) {
+                query += ` WHERE name_of_place = ?`;
+                values.push(lgu);
+            } else if (instrument && lgu === undefined) {
+                query += ` WHERE instrument = ?`;
+                values.push(instrument);
+            } else if (lgu && instrument) {
+                query += ` WHERE name_of_place = ? AND instrument = ?`;
+                values.push(lgu, instrument);
             }
-            if(i < years.length - 1){
-                query += `) 
-                UNION ALL `
+    
+            query += `)`;
+    
+            // Add UNION ALL except after the last SELECT statement
+            if (i < years.length - 1) {
+                query += ` UNION ALL `;
             }
         }
-        query += ")";
+    
         console.log(query);
-        this.connection.query(
-            query,
-            values,
-            (error, row) => {
-                if(error){
-                    callback(error, null);
-                }
-                if(row){
-                    callback(null, row);
-                }
+        this.connection.query(query, values, (error, rows) => {
+            if (error) {
+                callback(error, null);
+                return;
             }
-        )
+            callback(null, rows);
+        });
     }
+    
     select_by_year(year, lgu, callback){
         // Query builder
         let query = `SELECT * FROM cavite${year}`;
