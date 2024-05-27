@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <!-- Bootstrap -->
+    <!-- Javascript and CSS -->
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/data_logging.css">
 	<script src="/js/data_logging.js"></script>
@@ -17,14 +19,14 @@
         <h3>Imus Fire Information</h3>
         <ul >
             <li><a href="/">Fire Monitoring</a></li>
-            <li><a href="/fire_data">Risk Assessment</a></li>
-            <li><a href="/data_logging" class="active">Data Logging</a></li>
+            <li><a href="/fire_data" id="fire_data">Risk Assessment</a></li>
+            <li><a class="active-link" href="/data_logging">Data Logging</a></li>
         </ul>
         <div>
             <p>Mohamad Ali Calanda</p>
         </div>
     </nav>
-    <main>
+    <main class="">
 		<div class="main_nav">
             <form class="options">
                 <label for="cities">City or Municipality:
@@ -40,7 +42,6 @@
                         <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
                         <option value="General Mariano Alvarez">General Mariano Alvarez</option>
                         <option value="General Trias">General Trias City</option>
-                        
                         <option value="Indang">Indang</option>
                         <option value="Kawit">Kawit</option>
                         <option value="Magallanes">Magallanes</option>
@@ -73,13 +74,14 @@
 					</select>
                 </label>
 				<label>Confidence
-					<input type="number" min="0" max="100" name="confidence" value="50">
+				    <input type="number" min="0" max="100" name="confidence" value="50">
 				</label>
-            </form>			
+                <button id="openStatus">Get FIRMS Fire Data</button>
+            </form>
         </div>
         <div class="main_body">
-            <table class="table-content">
-                <tr>
+            <table class="table-content p-0 m-0">
+                <tr >
 					<th>LGU</th>
 					<th>Latitude</th>
 					<th>Longitude</th>
@@ -92,5 +94,51 @@
               </table>
         </div>
     </main>
+    <!-- Mapkey Modal -->
+    <div class="modalBackground">
+        <div class="modalMapKey">
+            <h2>Request Fire Data</h2>
+            <form>
+                <input type="hidden" name="map-key">
+                <label for="date">Select Date
+                    <input id="date" type="date" name="date">
+                </label>
+                <label for="day-range">Day Range
+                    <input id="day-range" type="number" name="range" max="10" min="1" value="1">
+                </label>
+                <label for="satellite-data">Satellite Instrument:
+                    <select id="satellite_data" name="instrument">
+                        <option value="MODIS_NRT" selected>MODIS_NRT (MODIS Near Real Time)</option>
+                        <option value="MODIS_SP">MODIS_SP (MODIS Standard Processing)</option>
+                        <option value="VIIRS_NOAA20_NRT">VIIRS_NOAA20_NRT (VIIRS NOAA-20 Near Real-Time)</option>
+                        <option value="VIIRS_NOAA21_NRT">VIIRS_NOAA21_NRT (VIIRS NOAA-21 Near Real-Time)</option>
+                        <option value="VIIRS_SNPP_NRT">VIIRS_SNPP_NRT (VIIRS Suomi-NPP Near Real-Time)</option>
+                        <option value="VIIRS_SNPP_SP">VIIRS_SNPP_SP (VIIRS Suomi-NPP Standard Processing)</option>
+                    </select>
+                </label>
+            </form>
+            <div>
+                <h4>Map Key Status</h4>
+                <div>Map key:
+                    <span class="map_key"></span>
+                </div>
+                <div>Transaction limit:
+                    <span class="transaction_limit"></span>
+                </div>
+                <div>Current transactions:
+                    <span class="current_transactions"></span>
+                </div>
+                <div>Transaction Interval:
+                    <span class="transaction_interval"></span>
+                </div>
+            </div>
+            <footer>
+                <button id="btnClose">Close</button>
+                <button id="btnRequest">Request</button>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -68,7 +68,6 @@ $(document).ready(function(){
             type: "POST",
             data: { municipalityCity, instrument, year, confidence },
             success: function(response){
-                console.log(response);
                 addTableRow(response);
             },
             error: function(error){
@@ -77,18 +76,80 @@ $(document).ready(function(){
         });
     }
     retrieveFireData();
+    /* Update table every time the form changed */
     $("input[type='date']").change(function(){
-        // console.log($(this).val());
         retrieveFireData();
     });
     $("input[type='number']").on('input', function(){
         /* if the text field is empty or blank should 0 */
-        // console.log($(this).val());
         retrieveFireData();
     });
     $("select").change(function(){
-        // console.log($(this).val());
         retrieveFireData();
-    })
+    });
 
+    /* retrieve map key status */
+    let checkMapKey = () => {
+        $.ajax({
+            url: "/check_mapkey",
+            type: "GET",
+            success: function(response){
+                $(".transaction_limit").text(response.transaction_limit);
+                $(".current_transactions").text(response.current_transactions);
+                $(".transaction_interval").text(response.transaction_interval);
+                $(".map_key").text(response.mapKey);
+
+                $("input[name='map-key']").val(response.mapKey);
+            },
+            error: function(error){
+                console.error(error);
+            }
+        })
+    }
+    checkMapKey();
+
+    $("#openStatus").click(function(e){
+        e.preventDefault();
+        $(".modalBackground").css({
+            "display": "block"
+        })
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const today = `${year}-${month}-${day}`;
+        $("#date").val(today);
+    });
+    $("#btnClose").click(function(e){
+        e.preventDefault();
+        $(".modalBackground").css({
+            "display": "none"
+        })
+    });
+
+
+    /*
+    * Request fire data from FIRMS API
+    */
+   $("#btnRequest").click(function(){
+        const mapKey = $("input[name='map-key']").val();
+        const date = $("input[name='date']").val();
+        const range = $("input[name='range']").val();
+        const instrument = $('#satellite_data').val();
+
+        // let endPoint = `/${mapKey}/${instrument}/PHL/${range}/${date}`;
+        
+        $.ajax({
+            url: "/request",
+            type: "POST",
+            data: { mapKey: mapKey, date: date, range: range, instrument: instrument },
+            success: function(response){
+               
+            },
+            error: function(error){
+                console.error(error);
+            }
+        })
+        location.reload();
+   })
 });

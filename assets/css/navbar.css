@@ -41,9 +41,10 @@ nav{
                 color: black;
                 margin: 10px;
             }
-            #home{
+            .active-link{
                 font-weight: bold;
             }
+
     nav div{
         text-align: right;
     }

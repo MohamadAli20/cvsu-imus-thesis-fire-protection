@@ -12,11 +12,12 @@ Router.get("/data_logging", UserController.data_logging);
 Router.post("/retrieve_firedata", RecordController.get_all_firedata);
 Router.get("/current_transaction", FetchController.getCurrentTransaction);
 Router.get("/request_firedata", FetchController.requestFireData);
-
+Router.get("/check_mapkey", RecordController.get_transaction_amount);
 Router.get("/:instrument/:date/:range", FetchController.getFireData);
 Router.get("/save_firedata", RecordController.store_firedata);
 Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 // Router.get("/api/:name_of_place", ApiController.fetchFireData);
+Router.post("/request", RecordController.getFireData);
 
 Router.get("/api/:place", ApiController.printPlace);
 

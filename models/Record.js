@@ -7,13 +7,6 @@ class Record{
     }
     /* Imus fire data query */
     select_firedata(details, callback){
-        console.log(details);
-        // {
-        //     municipalityCity: '',
-        //     instrument: '',
-        //     year: '2024',
-        //     confidence: '50'
-        //  }
         let values = [];
         let year = details.year;
         let query = `SELECT * FROM cavite${year}`;
@@ -35,9 +28,8 @@ class Record{
             query += ` AND instrument = ?`;
             values.push(details.instrument);
         }
-
         query += orderBy;
-        console.log(query);
+        // console.log(query);
         this.connection.query(
             query,
             values,
@@ -52,6 +44,28 @@ class Record{
             }
         )
     }
+    verify_if_duplicates(caviteFireData, callback){
+        for(let i = 0; i < caviteFireData.length; i++){
+            let lat = caviteFireData[i].latitude;
+            let long = caviteFireData[i].longitude
+            let time = caviteFireData[i].acq_time;
+            
+            this.connection.query(
+                `SELECT * FROM cavite2024 WHERE latitude = ? AND longitude = ? AND acq_time = ?`,
+                [ lat, long, time ],
+                (error, row) => {
+                    if(error){
+                        callback(error, null);
+                    }
+                    if(row && row.length > 0){ // Check if has any rows
+                        callback(null, row);
+                    }
+                }
+            )
+        }
+        
+    }
+    
 
     /*
     * Below methods are use to store fire data from FIRMS record from 2020 to May 25, 2024 
