@@ -1,4 +1,5 @@
 const model = require("../models/ApiRequest");
+const test = require("./Test");
 class Algorithms{
 
     index(req, res){
@@ -26,6 +27,9 @@ class Algorithms{
                 * Can calculate how far the fire incident is from the fire station.
                 */
                 let result = [];
+                
+                // test.test("djdjf");
+
                 let convertTime = (time) => {
                     /* convert the time to a string in case it is passed as a number */
                     time = time.toString();
@@ -65,7 +69,9 @@ class Algorithms{
                         // Check if the difference is within 24 hours
                         if (hoursDifference <= 24 && hoursDifference >= 1) {
                             firedata[i].time_ago_since_detected = Math.floor(hoursDifference);
+                            firedata[i].risk_level = test.test(firedata[i].name_of_place);
                             result.push(firedata[i]);
+                            // console.log();
                         }
                     }
                     res.json(result)
