@@ -69,7 +69,11 @@ class Algorithms{
                         // Check if the difference is within 24 hours
                         if (hoursDifference <= 24 && hoursDifference >= 1) {
                             firedata[i].time_ago_since_detected = Math.floor(hoursDifference);
-                            firedata[i].risk_level = test.test(firedata[i].name_of_place);
+                            firedata[i].risk_level = test.test(firedata[i].name_of_place).riskLevel;
+                            firedata[i].low_risk_threshold = test.test(firedata[i].name_of_place).lowRiskThreshold;
+                            firedata[i].moderate_risk_threshold = test.test(firedata[i].name_of_place).moderateRiskThreshold;
+                            firedata[i].high_risk_threshold = test.test(firedata[i].name_of_place).highRiskThreshold;
+
                             result.push(firedata[i]);
                             // console.log();
                         }

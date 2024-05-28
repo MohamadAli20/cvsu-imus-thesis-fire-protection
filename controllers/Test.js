@@ -70,7 +70,7 @@ class Test{
     const newFrequency = historicalData.find(entry => entry.lgu === `${newData}`).frequency;
     const newRiskLevel = classifyRisk(newFrequency);
 
-    return newRiskLevel;
+    return {riskLevel: newRiskLevel, lowRiskThreshold: lowRiskThreshold, moderateRiskThreshold: moderateRiskThreshold, highRiskThreshold: highRiskThreshold };
     }
 }
 
