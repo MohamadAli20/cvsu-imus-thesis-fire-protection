@@ -9,13 +9,14 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script src="/js/index.js"></script>
+    <script src="/js/algorithm.js"></script>
     <script src="/js/fetch_data.js"></script>
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <nav>
-        <h3>Imus Fire Information</h3>
+        <h3>Cavite Fire Information</h3>
         <ul >
             <li><a class="active-link" href="/">Fire Monitoring</a></li>
             <li><a href="/fire_data">Risk Assessment</a></li>
@@ -30,10 +31,10 @@
             <form class="options" action="" method="GET">
                 <div>
                     <label>
-                        <input type="radio" name="area" value="ph_firedata"> PH Fire Data
+                        <input type="radio" name="area" value="ph_firedata"> Cavite Map
                     </label>
                     <label>
-                        <input type="radio" name="area" value="cavite_firedata" checked="true"> Cavite Fire Data
+                        <input type="radio" name="area" value="cavite_firedata"> Imus Map
                     </label>
                 </div>
                 <label for="cities">City or Municipality:

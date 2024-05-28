@@ -5,6 +5,7 @@ const UserController = require("./controllers/Users");
 const FetchController = require("./controllers/FetchData");
 const RecordController = require("./controllers/Records");
 const ApiController = require("./controllers/ApiRequests");
+const AlgorithmController = require("./controllers/Algorithms");
 
 Router.get("/", UserController.index);
 Router.get("/fire_data", UserController.fire_data);
@@ -22,5 +23,8 @@ Router.post("/request", RecordController.getFireData);
 /* API endpoints */
 Router.get("/api/cavite_firedata", ApiController.get_cavite_firedata);
 Router.get("/api/:year", ApiController.get_by_year);
+
+/* For the implementation of the algorthims */
+Router.get("/detect_fire", AlgorithmController.index);
 
 module.exports = Router;

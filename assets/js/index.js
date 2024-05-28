@@ -1,7 +1,7 @@
 $(document).ready(async function(){
 
     let coordinatesBoundary;
-    let lgu = "Imus";
+    let boundaryPath = "lgu/Imus";
 
     /*
     * Draw the boundary of selected LGU and Barangay
@@ -10,7 +10,7 @@ $(document).ready(async function(){
     /* LGU Boundary (By Default it is set to Imus) */
     async function fetchLGUBoundary() {
         try{
-            const res = await fetch(`../geo_json/lgu/${lgu}.geojson`);
+            const res = await fetch(`../geo_json/${boundaryPath}.geojson`);
             // const res = await fetch(`../geo_json/cavite/cavite.geojson`);
             if(!res.ok){
                 throw new Error(`HTTP error! Status: ${res.status}`);
@@ -22,6 +22,7 @@ $(document).ready(async function(){
         }
     }
     await fetchLGUBoundary(); /* Wait for fetchJSONData to complete before proceeding */
+    
     
     /* Get date today */
     let currentDate = new Date();
@@ -36,14 +37,14 @@ $(document).ready(async function(){
     let imusFireData = [];
 
     /* Center of the map */
-    // let latitude = 14.399411;
-    // let longitude = 120.945548;
-    // let zoom = 13;
+    let latitude = 14.399411;
+    let longitude = 120.945548;
+    let zoom = 13;
 
     /* Coordinates of Cavite and center */
-    let latitude = 14.269827;
-    let longitude = 120.852260;
-    let zoom = 10;
+    // let latitude = 14.269827;
+    // let longitude = 120.852260;
+    // let zoom = 10;
 
     let area = "cavite_firedata";
     
@@ -62,6 +63,17 @@ $(document).ready(async function(){
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
+    /* Add Imus Palengke Fire Station*/
+    let stationIcon = L.icon({
+        iconUrl: '/images/firetruck.svg',
+        iconSize: [30, 30], /* Size of the icon */
+        iconAnchor: [20, 40], /* Point of the icon which will correspond to marker's location */
+    });
+    L.marker([14.423045833800078, 120.9415753715421], {icon: stationIcon}).addTo(map);
+    L.marker([14.428671953873291, 120.9459966654402], {icon: stationIcon}).addTo(map);
+    // L.marker([14.374933636877767, 120.92407030108924], {icon: stationIcon}).addTo(map);
+
 
     /* Add the boundary GeoJSON data as a GeoJSON layer to the map */
     let boundary = L.geoJSON(coordinatesBoundary, {
@@ -104,7 +116,7 @@ $(document).ready(async function(){
         sendRequest();
     });
     $("select[name='city']").on("input", async function(){
-        lgu = $("select[name='city']").val();
+        boundaryPath = "lgu/"+$("select[name='city']").val();
         
         await fetchLGUBoundary();
 
@@ -124,27 +136,41 @@ $(document).ready(async function(){
     /*
     * Focus on the PH map
     */
-    let focusPhMap = () => {
-        latitude = 12.104372 
-        longitude = 122.870847
-        zoom = 5;
-        width = 20;
-        height = 20;
+    let focusCaviteMap = async () => {
+        boundaryPath = "cavite/cavite";
         
-        map.setView([latitude, longitude], zoom); /* Zoom out to show the whole map of the Philippines */
-        map.removeLayer(boundary); /* Remove the boundary */
+        await fetchLGUBoundary();
+
+        map.setView(coordinatesBoundary.center, coordinatesBoundary.zoom)
+        map.removeLayer(boundary);
+        boundary = L.geoJSON(coordinatesBoundary, {
+            style: {
+                fill: false, // Disable fill color
+                color: 'red', // Border color
+                weight: 2,    // Border thickness
+                opacity: 0.8  // Border opacity
+            }
+        }).addTo(map);
+
     }
     /* 
     * Focus on the Cavite map
     */
-    let focusImusMap = () => {
-        latitude = 14.399411;
-        longitude = 120.945548;
-        zoom = 13;
+    let focusImusMap = async () => {
+        boundaryPath = "lgu/Imus";
+        
+        await fetchLGUBoundary();
 
-        map.setView([latitude, longitude], zoom); /* Zoom in to show the map of the Imus City */
-        // Add the boundary GeoJSON data as a GeoJSON layer to the map
-        boundary.addTo(map);
+        map.setView(coordinatesBoundary.center, coordinatesBoundary.zoom)
+        map.removeLayer(boundary);
+        boundary = L.geoJSON(coordinatesBoundary, {
+            style: {
+                fill: false, // Disable fill color
+                color: 'red', // Border color
+                weight: 2,    // Border thickness
+                opacity: 0.8  // Border opacity
+            }
+        }).addTo(map);
     }
 
     /* 
@@ -159,7 +185,7 @@ $(document).ready(async function(){
             }
         }
         if(area === "ph_firedata"){
-            focusPhMap();
+            focusCaviteMap();
         }
         if(area === "cavite_firedata"){
             focusImusMap();
