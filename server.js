@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 /*Routes*/
 app.use("/", routes); /* Base path*/
-// app.use("/api/:year/:lgu", routes); /* For API endpoints */
+app.use("/api/:year", routes); /* For API endpoints */
 
 app.use("/fire_data", routes);
 app.use("/:instrument/:date/:range", routes);

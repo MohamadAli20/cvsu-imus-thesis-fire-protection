@@ -106,7 +106,20 @@ class ApiRequest{
             }
         )
     }
-
+    select_all_frequency(callback){
+        this.connection.query(
+            "SELECT name_of_place AS lgu, COUNT(*) AS frequency FROM ( SELECT name_of_place FROM cavite2020 UNION ALL SELECT name_of_place FROM cavite2021 UNION ALL SELECT name_of_place FROM cavite2022 UNION ALL SELECT name_of_place FROM cavite2023 UNION ALL SELECT name_of_place FROM cavite2024 ) AS all_years GROUP BY name_of_place",
+            (error, row) => {
+                if(error){
+                    callback(error, null);
+                }
+                if(row){
+                    callback(null, row);
+                    // console.log(row);
+                }
+            }
+        )
+    }
 }
 
 module.exports = new ApiRequest();

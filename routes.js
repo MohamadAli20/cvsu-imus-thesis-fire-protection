@@ -20,11 +20,13 @@ Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 // Router.get("/api/:name_of_place", ApiController.fetchFireData);
 Router.post("/request", RecordController.getFireData);
 
+/* For the implementation of the algorthims */
+Router.get("/api/detect_fire", AlgorithmController.index);
+
 /* API endpoints */
 Router.get("/api/cavite_firedata", ApiController.get_cavite_firedata);
 Router.get("/api/:year", ApiController.get_by_year);
 
-/* For the implementation of the algorthims */
-Router.get("/detect_fire", AlgorithmController.index);
+
 
 module.exports = Router;

@@ -44,8 +44,6 @@ class ApiRequests{
                 res.json(row);
             }
         })
-
-        
     }
 }
 

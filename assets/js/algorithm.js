@@ -85,3 +85,77 @@ $(document).ready(function(){
     }, 5000);
 
 })
+$(document).ready(function(){
+
+    /*
+    * Can notify when a fire is detected in near real time.
+    * Display how many hours ago the fire was detected.
+    * Can calculate the risk level of a LGU based on historical data, considering the square kilometers of the barangay.
+    * Can calculate how far the fire incident is from the fire station.
+    */
+
+    function convertTime(time) {
+        // Convert the time to a string in case it is passed as a number
+        time = time.toString();
+    
+        // Ensure the time string is 4 characters long
+        while (time.length < 4) {
+            time = '0' + time;
+        }
+    
+        // Extract the hours and minutes
+        let hours = time.slice(0, 2);
+        let minutes = time.slice(2, 4);
+    
+        // Format the time as HH:MM
+        return `${hours}:${minutes}`;
+    }
+
+    let checkHoursAgo = (firedata) => {
+        // For testing: setting a fixed current time
+        let nowString = "Tue May 27 2024 19:05:26 GMT+0800 (Singapore Standard Time)";
+        let now = new Date(nowString);
+
+        for(let i = 0; i < firedata.length; i++){
+            let time = convertTime(firedata[i].acq_time);            
+            let date = firedata[i].acq_date;
+            
+            let dateTimeString = `${date}T${time}:00`;
+
+            // Convert the dateTimeString to a Date object
+            let fireDateTime = new Date(dateTimeString);
+
+            // Calculate the difference in hours between the current time and the fire incident time
+            let hoursDifference = (now - fireDateTime) / (1000 * 60 * 60);
+
+            // Check if the difference is within 1 to 24 hours
+            if (hoursDifference <= 24 && hoursDifference >= 1) {
+                console.log(`Fire detected ${hoursDifference.toFixed(2)} hours ago`);
+            }
+        }
+    }
+
+    let fetchData = setInterval(function(){
+
+        /* 
+        * Real-time monitoring of fire data
+        * Fetch fire data every 5 seconds from year 2024
+        */ 
+        $.ajax({
+            url: "/api/2024",
+            type: "GET",
+            success: function(response){
+                checkHoursAgo(response);
+            },
+            error: function(error){
+                console.error(error);
+            }
+        });
+
+        /* For testing */
+        // Uncomment below for testing to stop after the first fetch
+        // clearInterval(fetchData);
+
+    }, 5000);
+
+});

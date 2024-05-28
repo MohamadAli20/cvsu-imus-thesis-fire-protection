@@ -1,29 +1,7 @@
-class Test{
+const model = require("../models/ApiRequest");
 
-    test(newData){
-    // Sample historical fire incident data with frequencies
-    const historicalData = [
-        { lgu: "Amadeo", frequency: 2 },
-        { lgu: "Bacoor", frequency: 54 },
-        { lgu: "Carmona", frequency: 50 },
-        { lgu: "Dasmarinas", frequency: 160 },
-        { lgu: "General Emilio Aguinaldo", frequency: 6 },
-        { lgu: "General Mariano Alvarez", frequency: 3 },
-        { lgu: "General Trias", frequency: 156 },
-        { lgu: "Imus", frequency: 62 },
-        { lgu: "Indang", frequency: 10 },
-        { lgu: "Kawit", frequency: 51 },
-        { lgu: "Magallanes", frequency: 19 },
-        { lgu: "Maragondon", frequency: 149 },
-        { lgu: "Naic", frequency: 235 },
-        { lgu: "Noveleta", frequency: 5 },
-        { lgu: "Rosario", frequency: 44 },
-        { lgu: "Silang", frequency: 85 },
-        { lgu: "Tagaytay", frequency: 4 },
-        { lgu: "Tanza", frequency: 164 },
-        { lgu: "Ternate", frequency: 11 },
-        { lgu: "Trece Martires", frequency: 96 }
-    ];
+class RiskAssessment{
+    risk_assessment(newData, historicalData){
 
     // Function to calculate quantiles
     function calculateQuantiles(data, quantiles) {
@@ -50,9 +28,9 @@ class Test{
     const moderateRiskThreshold = quantiles[0.5];
     const highRiskThreshold = quantiles[0.75];
 
-    console.log('Low risk threshold:', lowRiskThreshold);
-    console.log('Moderate risk threshold:', moderateRiskThreshold);
-    console.log('High risk threshold:', highRiskThreshold);
+    // console.log('Low risk threshold:', lowRiskThreshold);
+    // console.log('Moderate risk threshold:', moderateRiskThreshold);
+    // console.log('High risk threshold:', highRiskThreshold);
 
     // Function to classify risk level based on frequency
     function classifyRisk(frequency) {
@@ -70,8 +48,9 @@ class Test{
     const newFrequency = historicalData.find(entry => entry.lgu === `${newData}`).frequency;
     const newRiskLevel = classifyRisk(newFrequency);
 
-    return {riskLevel: newRiskLevel, lowRiskThreshold: lowRiskThreshold, moderateRiskThreshold: moderateRiskThreshold, highRiskThreshold: highRiskThreshold };
+    // return lowRiskThreshold
+    return { riskLevel: newRiskLevel, lowRiskThreshold: lowRiskThreshold, moderateRiskThreshold: moderateRiskThreshold, highRiskThreshold: highRiskThreshold };
     }
 }
 
-module.exports = new Test();
+module.exports = new RiskAssessment();
