@@ -9,8 +9,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/algorithm.js"></script>
-    <script src="/js/fetch_data.js"></script>
+    <!-- <script src="/js/algorithm.js"></script> -->
+    <!-- <script src="/js/fetch_data.js"></script> -->
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
@@ -44,7 +44,7 @@
                         <option value="Bacoor">Bacoor City</option>
                         <option value="Carmona">Carmona City</option>
                         <option value="Cavite City">Cavite City</option>
-                        <option value="Dasmariñas">Dasmariñas City</option>
+                        <option value="Dasmarinas">Dasmariñas City</option>
                         <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
                         <option value="General Mariano Alvarez">General Mariano Alvarez</option>
                         <option value="General Trias">General Trias City</option>
@@ -64,7 +64,7 @@
                         <option value="Trece Martires">Trece Martires City</option>
                     </select>
                 </label>
-                <label for="satellite-data">Satellite Instrument:
+                <!-- <label for="satellite-data">Satellite Instrument:
                     <select id="satellite-data" name="instrument">
                         <option value="MODIS_NRT">MODIS_NRT (MODIS Near Real Time)</option>
                         <option value="MODIS_SP">MODIS_SP (MODIS Standard Processing)</option>
@@ -100,12 +100,22 @@
                 </label>
                 <label>Map key
                     <input type="text" name="map_key">
-                </label>
+                </label> -->
+                <div>
+                    Detected Fire
+                    <div class="fire-details">
+
+                    </div>
+                </div>
             </form>
+            
         </div>
         <div class="main_body">
             <div id="map"></div>
         </div>
     </main>
+    <div class="notification">
+
+    </div>
 </body>
 </html>

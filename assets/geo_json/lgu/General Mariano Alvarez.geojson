@@ -2,7 +2,7 @@
     "name":"General Mariano Alvarez",
     "type":"Feature",
     "center":[14.313832, 121.015624],
-    "zoom":19,
+    "zoom": 13,
     "geometry":{
         "type":"Polygon",
         "coordinates":[

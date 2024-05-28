@@ -87,17 +87,21 @@ $(document).ready(async function(){
 
     let sendRequest = () => {
         $.ajax({
-            url: `/${instrument}/${date}/${range}`,
+            url: `/api/fire_monitor`,
             type: "GET",
             success: function(response){
                 getFireData(response);
+                // console.log(response)
             },
             error: function(xhr, status, error){
                 console.error(error);
             }
         })
     }
-    sendRequest();
+    setInterval(function(){
+        sendRequest();
+    }, 5000);
+    
     
     /* 
     * Watch the instrument, date and range changes
@@ -278,29 +282,36 @@ $(document).ready(async function(){
     
     /* Convert JSON string into JavaScript Object and push to the array */
     let getFireData = (dataString) => {
-        fireDataPh = []; /* Clear fire data */
+        fireDataPh = dataString; /* Clear fire data */
         
-        const rows = dataString.split('\n');
-        const keys = rows[0].split(',');
+        // [{"id":444,"latitude":14.36718,"longitude":120.93541,"name_of_place":"Imus","acq_date":"2024-05-28","acq_time":"0544","track":0.53,"brightness":334.56,"satellite":"N","instrument":"VIIRS","confidence":0,"daynight":"D","version":"2.0NRT","bright_t31":299.26,"scan":0.61,"frp":3.89,"created_at":"2024-05-26T08:51:49.000Z","updated_at":null,"time_ago_since_detected":20,"risk_level":"high","low_risk_threshold":9,"moderate_risk_threshold":50.5,"high_risk_threshold":108.5}]
+        // console.log(JSON.stringify(dataString))
+        $(".fire-details").empty();
+        for(let i = 0; i < dataString.length; i++){
+            // console.log(dataString[i].name_of_place)
+           
+            let div = document.createElement("div");
+            div.className = "detect-fire";
 
-        for(let i = 1; i < rows.length; i++){
-            const values = rows[i].split(',');
-            const obj = {};
-            let validObject = true;
-            for(let j = 0; j < keys.length; j++) {
-                /* Check if the value is undefined */
-                if (values[j] === undefined) {
-                    validObject = false;
-                    break;
-                }
-                obj[keys[j]] = values[j];
-            }
-            /* If valid push to the array */
-            if(validObject) {
-                fireDataPh.push(obj);
-            }
+            let lgu = document.createElement("p");
+            lgu.textContent = "Location: " + dataString[i].name_of_place;
+            
+            let riskLevel = document.createElement("p");
+            riskLevel.textContent  = "Risk level: " + dataString[i].risk_level;
+
+            let instrument = document.createElement("p");
+            instrument.textContent  = "Instrument: " + dataString[i].instrument;
+
+            let time = document.createElement("p");
+            time.textContent = "Detected " + dataString[i].time_ago_since_detected + " hours ago";
+
+            div.append(lgu);
+            div.append(riskLevel);
+            div.append(instrument);
+            div.append(time);
+
+            $(".fire-details").append(div);
         }
-        // console.log(fireDataPh);
         addMark();
     }
 
@@ -312,64 +323,4 @@ $(document).ready(async function(){
     console.log(result);
 
 
-    /* Get PH fire data */
-
-    /* Get the firedata in the inside the four direction points */
-    // let getImusFireData = () => {
-    //     /* Assign the center of the Imus City*/
-    //     latitude = 14.399411;
-    //     longitude = 120.945548;
-        
-    //     /* Kawit, Bacoor (North West Point) - coordinates < 14.440432 AND coordinates > 120.903751 */ 
-    //     const northWestLatitude = 14.440432;
-    //     const northwestLongitude = 120.903751;
-    //     /* San Nicolas I, Bacoor (North East Point) - coordinates < 14.440432 AND coordinates < 120.969294 */
-    //     const northEastLatitude = 14.440432;
-    //     const northEastLongitude = 120.969294;
-    //     /* Santiago, GenTri (South West Point) - coordinates > 14.344069 AND coordinates > 120.903751 */
-    //     const southWestLatitude = 14.344069;
-    //     const southWestLongitude = 120.903751;
-    //     /* Salawag, Dasma (South East Point) - coordinates > 14.344069 AND coordinates < 120.969294 */
-    //     const southEastLatitude =  14.344069;
-    //     const southEastLongitude = 120.969294;
-
-    //     // 14.443423,120.917212
-
-    //     for(let i = 0; i < fireDataPh.length; i++){
-    //         let latitudeLocation = parseFloat(fireDataPh[i].latitude);
-    //         let longitudeLocation = parseFloat(fireDataPh[i].longitude);
-
-    //         if( (latitudeLocation < northWestLatitude && longitudeLocation > northwestLongitude) &&
-    //             (latitudeLocation < northEastLatitude && longitudeLocation < northEastLongitude) &&
-    //             (latitudeLocation > southWestLatitude && longitudeLocation > southWestLongitude) &&
-    //             (latitudeLocation > southEastLatitude && longitudeLocation < southEastLongitude)){
-    //                 imusFireData.push(fireDataPh[i]);
-    //         }
-    //     }
-    //     addMark();
-    // }
-    
-    // let addMark = () => {
-    //     var fireIcon = L.icon({
-    //         iconUrl: '/images/fire.svg',
-    //         iconSize: [40, 40], // Size of the icon
-    //         iconAnchor: [20, 40], // Point of the icon which will correspond to marker's location
-    //     });
-    //     for(let i = 0; i < imusFireData.length; i++){
-    //         let latitude = parseFloat(imusFireData[i].latitude);
-    //         let longitude = parseFloat(imusFireData[i].longitude);
-    //         let brightness = parseFloat(imusFireData[i].brightness);
-    //         let confidence = parseFloat(imusFireData[i].confidence);
-    //         let instrument = imusFireData[i].instrument;
-
-    //         let marker = L.marker([latitude, longitude], {icon: fireIcon}).addTo(map);
-    //         let information = "Latitude: " + latitude +
-    //                         "<br>Longitude: " + longitude +
-    //                         "<br>Brightness: " + brightness +
-    //                         "<br>Confidence: " + confidence +
-    //                         "<br>Instrument: " + instrument;
-
-    //         marker.bindPopup(information);
-    //     }
-    // }
 })
