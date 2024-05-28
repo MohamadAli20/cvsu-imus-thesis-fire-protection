@@ -64,16 +64,23 @@ $(document).ready(async function(){
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    /* Add Imus Palengke Fire Station*/
+    /* Add Fire Station Marker on the map*/
     let stationIcon = L.icon({
         iconUrl: '/images/firetruck.svg',
         iconSize: [30, 30], /* Size of the icon */
         iconAnchor: [20, 40], /* Point of the icon which will correspond to marker's location */
     });
+    // Imus
     L.marker([14.423045833800078, 120.9415753715421], {icon: stationIcon}).addTo(map);
     L.marker([14.428671953873291, 120.9459966654402], {icon: stationIcon}).addTo(map);
-    // L.marker([14.374933636877767, 120.92407030108924], {icon: stationIcon}).addTo(map);
-
+    // Bacoor
+    L.marker([14.459627000308023, 120.957817102018], {icon: stationIcon}).addTo(map);    
+    L.marker([14.430587099443615, 120.96835547055544], {icon: stationIcon}).addTo(map);    
+    // Dasma
+    L.marker([14.322265366122872, 120.94415801816322], {icon: stationIcon}).addTo(map);
+    L.marker([14.290882235736571, 120.93304548032707], {icon: stationIcon}).addTo(map);
+    // General Trias
+    L.marker([14.38674955268442, 120.88018412755886], {icon: stationIcon}).addTo(map);
 
     /* Add the boundary GeoJSON data as a GeoJSON layer to the map */
     let boundary = L.geoJSON(coordinatesBoundary, {
