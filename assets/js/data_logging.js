@@ -146,6 +146,9 @@ $(document).ready(function(){
                 console.error(error);
             }
         });
+        date = $("input[name='date']").val("");
+        range = $("input[name='range']").val("");
+
         location.reload();
    })
 });

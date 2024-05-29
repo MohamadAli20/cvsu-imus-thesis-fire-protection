@@ -107,7 +107,8 @@ $(document).ready(async function(){
     }
     setInterval(function(){
         sendRequest();
-    }, 10000);
+    }, 5000);
+    sendRequest();
     
     
     /* 

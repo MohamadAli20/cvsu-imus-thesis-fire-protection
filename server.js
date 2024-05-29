@@ -3,6 +3,7 @@ const app = express();
 const routes = require("./routes");
 const path = require('path');
 const axios = require('axios');
+const PORT = process.env.POST || 8080;  
 
 /*using templates*/
 app.set("views", path.join(__dirname, "views"));
@@ -25,9 +26,7 @@ app.use("/:instrument/:date/:range", routes);
 app.use("/save_firedata", routes);
 app.use("/insert_imus_firedata", routes);
 
-
-
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log("Listening on port 8080");
     console.log("http://localhost:8080")
 });
