@@ -23,6 +23,7 @@ Router.post("/request", RecordController.getFireData);
 /* For the implementation of the algorthims */
 Router.get("/api/fire_monitor", ApiController.detect_fire);
 Router.get("/api/fire_frequency", ApiController.get_fire_frequency);
+Router.get("/api/fire_risk_level", ApiController.get_risk_level);
 
 /* API endpoints */
 Router.get("/api/cavite_firedata", ApiController.get_cavite_firedata);

@@ -125,6 +125,27 @@ class ApiRequests{
             }
         })
     }
+    get_risk_level(req, res){
+        model.select_all_frequency( async(error, row) => {
+            if(error){
+                console.error(error);
+            } 
+            if(row){
+                let result = [];
+                for(let i = 0; i < row.length; i++){
+                    // console.log(row[i].lgu)
+                    const assessment = await riskAssessment.risk_assessment(row[i].lgu, row);
+                    row[i].risk_level = assessment.riskLevel;
+                    row[i].low_risk_threshold = assessment.lowRiskThreshold;
+                    row[i].moderate_risk_threshold = assessment.moderateRiskThreshold;
+                    row[i].high_risk_threshold = assessment.highRiskThreshold;
+
+                    result.push(row[i]);
+                }
+                res.json(result);
+            }
+        });
+    }
 }
 
 module.exports = new ApiRequests();

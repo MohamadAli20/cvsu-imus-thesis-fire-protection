@@ -126,8 +126,7 @@ class Records{
                         /* request fire data from FIRMS, uncomment this after testing */
                         const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/${mapkey[0]}/${instrument[j]}/PHL/${range}/${date}`);
                         // Remove values in req.body after use
-                        // req.body.range = null;
-                        // req.body.date = null;
+                        
                         const dataString = response.data
                         const dataArray = dataString.split('\n').slice(1).map(line => {
                             const [country_id, latitude, longitude, bright_ti4, scan, track, acq_date, acq_time, satellite, instrument, confidence, version, bright_ti5, frp, daynight] = line.split(',');
