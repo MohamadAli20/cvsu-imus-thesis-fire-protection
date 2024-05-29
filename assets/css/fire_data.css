@@ -84,7 +84,7 @@ main{
                 border-bottom: 1px solid black;
             }
     .main_body{
-        width: 80%;
+        width: 100%;
     }
         #map{
             width: 100%;

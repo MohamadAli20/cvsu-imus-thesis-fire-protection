@@ -290,34 +290,43 @@ $(document).ready(async function(){
     /* Convert JSON string into JavaScript Object and push to the array */
     let getFireData = (dataString) => {
         fireDataPh = dataString; /* Clear fire data */
-        
+        // fireDataPh = []; /*for testing*/
         // [{"id":444,"latitude":14.36718,"longitude":120.93541,"name_of_place":"Imus","acq_date":"2024-05-28","acq_time":"0544","track":0.53,"brightness":334.56,"satellite":"N","instrument":"VIIRS","confidence":0,"daynight":"D","version":"2.0NRT","bright_t31":299.26,"scan":0.61,"frp":3.89,"created_at":"2024-05-26T08:51:49.000Z","updated_at":null,"time_ago_since_detected":20,"risk_level":"high","low_risk_threshold":9,"moderate_risk_threshold":50.5,"high_risk_threshold":108.5}]
         // console.log(JSON.stringify(dataString))
         $(".fire-details").empty();
-        for(let i = 0; i < dataString.length; i++){
-            // console.log(dataString[i].name_of_place)
-           
-            let div = document.createElement("div");
-            div.className = "detect-fire";
-
-            let lgu = document.createElement("p");
-            lgu.textContent = "Location: " + dataString[i].name_of_place;
+        if(fireDataPh.length > 0){
+            for(let i = 0; i < dataString.length; i++){
+                // console.log(dataString[i].name_of_place)
             
-            let riskLevel = document.createElement("p");
-            riskLevel.textContent  = "Risk level: " + dataString[i].risk_level;
+                let div = document.createElement("div");
+                div.className = "detect-fire";
 
-            let instrument = document.createElement("p");
-            instrument.textContent  = "Instrument: " + dataString[i].instrument;
+                let lgu = document.createElement("p");
+                lgu.textContent = "Location: " + dataString[i].name_of_place;
+                
+                let riskLevel = document.createElement("p");
+                riskLevel.textContent  = "Risk level: " + dataString[i].risk_level;
 
-            let time = document.createElement("p");
-            time.textContent = "Detected " + dataString[i].time_ago_since_detected + " hours ago";
+                let instrument = document.createElement("p");
+                instrument.textContent  = "Instrument: " + dataString[i].instrument;
 
-            div.append(lgu);
-            div.append(riskLevel);
-            div.append(instrument);
-            div.append(time);
+                let time = document.createElement("p");
+                time.textContent = "Detected " + dataString[i].time_ago_since_detected + " hours ago";
 
-            $(".fire-details").append(div);
+                div.append(lgu);
+                div.append(riskLevel);
+                div.append(instrument);
+                div.append(time);
+
+                $(".fire-details").append(div);
+            }
+        }
+        else{
+            let noData = document.createElement("p");
+            noData.className = "no-data-label"
+            noData.textContent  = "No fire data available";
+            $(".fire-details").append(noData);
+
         }
         addMark();
     }
@@ -327,7 +336,7 @@ $(document).ready(async function(){
     var poly = turf.polygon(coordinatesBoundary.geometry.coordinates);
 
     let result = turf.booleanPointInPolygon(pt, poly);
-    console.log(result);
+    // console.log(result);
 
 
 })

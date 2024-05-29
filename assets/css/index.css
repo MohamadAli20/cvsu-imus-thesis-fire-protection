@@ -38,15 +38,34 @@ main{
                 margin-bottom: 10px;
                 /* border-bottom: 1px solid black; */
             }
-            .detect-fire{
-                border: 1px solid red;
-                padding: 5px 10px;
-                margin-bottom: 5px;
-            }
             .fire-details{
-                font-size: 16px;
+                /* font-size: 16px; */
                 overflow: auto;
                 height: 300px;
+                margin-top: 10px;
+            }
+            .detect-fire {
+                border: 2px solid red;
+                padding: 5px 10px;
+                margin-bottom: 5px;
+                animation: twinkling 1s infinite alternate; /* Twinkling animation */
+            }
+            
+            @keyframes twinkling {
+                0% {
+                    border-color: red;
+                }
+                50% {
+                    border-color: orange; /* Change to another color */
+                }
+                100% {
+                    border-color: red;
+                }
+            }
+            .no-data-label{
+                text-align: center;
+                border: 1px solid gray;
+                padding: 10px;
             }
     .main_body{
         width: 80%;

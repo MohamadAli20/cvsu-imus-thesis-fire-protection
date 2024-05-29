@@ -13,65 +13,14 @@
 </head>
 <body>
     <nav>
-        <h3>Imus Fire Information</h3>
+        <h3>Cavite Fire Information</h3>
         <ul >
             <li><a href="/" id="home">Fire Monitoring</a></li>
             <li><a class="active-link" href="/fire_data">Risk Index Map</a></li>
             <li><a href="/data_logging">Data Logging</a></li>
         </ul>
-        <div>
-            <p>Mohamad Ali Calanda</p>
-        </div>
     </nav>
     <main>
-        <div class="main_nav">
-            <form class="options" action="" method="GET">
-                <label for="cities">City or Municipality:
-                    <select id="cities" name="city">
-                        <option value="Alfonso">Alfonso</option>
-                        <option value="Amadeo">Amadeo</option>
-                        <option value="Bacoor">Bacoor City</option>
-                        <option value="Carmona">Carmona City</option>
-                        <option value="Cavite City">Cavite City</option>
-                        <option value="Dasmariñas">Dasmariñas City</option>
-                        <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
-                        <option value="General Mariano Alvarez">General Mariano Alvarez</option>
-                        <option value="General Trias">General Trias City</option>
-                        <option value="Imus" selected>Imus City</option>
-                        <option value="Indang">Indang</option>
-                        <option value="Kawit">Kawit</option>
-                        <option value="Magallanes">Magallanes</option>
-                        <option value="Maragondon">Maragondon</option>
-                        <option value="Mendez">Mendez</option>
-                        <option value="Naic">Naic</option>
-                        <option value="Noveleta">Noveleta</option>
-                        <option value="Rosario">Rosario</option>
-                        <option value="Silang">Silang</option>
-                        <option value="Tagaytay">Tagaytay City</option>
-                        <option value="Tanza">Tanza</option>
-                        <option value="Ternate">Ternate</option>
-                        <option value="Trece Martires">Trece Martires City</option>
-                    </select>
-                </label>
-                <label for="satellite-data">Satellite Instrument:
-                    <select id="satellite-data" name="instrument">
-                        <option value="MODIS_NRT">MODIS_NRT (MODIS Near Real-Time, Real-Time and Ultra Real-Time)</option>
-                        <option value="MODIS_SP">MODIS_SP (MODIS Standard Processing)</option>
-                        <option value="VIIRS_NOAA20_NRT">VIIRS_NOAA20_NRT (VIIRS NOAA-20 Near Real-Time, Real-Time and Ultra Real-Time)</option>
-                        <option value="VIIRS_NOAA21_NRT" selected>VIIRS_NOAA21_NRT (VIIRS NOAA-21 Near Real-Time, Real-Time and Ultra Real-Time)</option>
-                        <option value="VIIRS_SNPP_NRT">VIIRS_SNPP_NRT (VIIRS Suomi-NPP Near Real-Time, Real-Time and Ultra Real-Time)</option>
-                        <option value="VIIRS_SNPP_SP">VIIRS_SNPP_SP (VIIRS Suomi-NPP Standard Processing)</option>
-                    </select>
-                </label>
-                <p>Get Fire Data</p>
-                <label>From
-                    <input type="date" name="from_date">
-                </label>
-                <label>To
-                    <input type="date" name="to_date">
-                </label>
-            </form>
-        </div>
         <div class="main_body">
             <div id="map"></div>
         </div>
