@@ -6,8 +6,9 @@ $(document).ready(function(){
             type: "GET",
             success: function(response){
                 console.log("Running... Auto-Requesting fire data from FIRMS");
-                if(response){
-                    // location.reload();
+                if(response.length > 0){
+                    // console.log(response)
+                    location.reload();
                 }
             },
             error: function(error){

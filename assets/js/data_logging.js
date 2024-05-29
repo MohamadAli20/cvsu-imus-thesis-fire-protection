@@ -1,27 +1,5 @@
 $(document).ready(function(){
 
-    let autoRequest = setInterval(function(){
-        // $.ajax({
-        //     url: "/request",
-        //     type: "GET",
-        //     success: function(response){
-        //         console.log("Running... Auto-Requesting fire data from FIRMS");
-        //         if(response){
-        //             // location.reload();
-                    
-        //         }
-        //     },
-        //     error: function(error){
-        //         console.error(error);
-        //         if(error){
-        //             clearInterval(autoRequest);
-        //         }
-        //     }
-        // });
-        console.log("Running... Auto-Requesting fire data from FIRMS");
-    }, 60000);
-    autoRequest();
-
     let convertToTime = (time) => {
         let timeStr = time.toString();
         let hour = timeStr.slice(0, 2);
@@ -153,17 +131,21 @@ $(document).ready(function(){
     * Manual Request fire data from FIRMS API
     */
    $("#btnRequest").click(function(){
+        console.log("Manual requesting fire data from FIRMS.");
+        const date = $("input[name='date']").val();
+        const range = $("input[name='range']").val();
+
         $.ajax({
             url: "/request",
-            type: "GET",
+            type: "POST",
+            data: { date: date, range: range },
             success: function(response){
-                if(response){
-                    location.reload();
-                }
+                console.log(response);
             },
             error: function(error){
                 console.error(error);
             }
         });
+        location.reload();
    })
 });
