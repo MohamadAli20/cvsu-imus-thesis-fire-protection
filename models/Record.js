@@ -63,7 +63,20 @@ class Record{
             )
         // }
     }
-    
+    /* retrieve all map key from the database */
+    select_mapkey(callback){
+        this.connection.query(
+            "SELECT * FROM map_keys",
+            (error, row) => {
+                if(error){
+                    callback(error, null);
+                }
+                if(row){
+                    callback(null, row);
+                }
+            }
+        )
+    }
 
     /*
     * Below methods are use to store fire data from FIRMS record from 2020 to May 25, 2024 
@@ -95,9 +108,7 @@ class Record{
                 ],
                 (error) => {
                     if(error){
-                        console.error(error);
-                        callback(error);
-                        return;
+                        callback(error, null);
                     }
                     callback(false);
                 }

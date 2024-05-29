@@ -17,7 +17,7 @@ Router.get("/:instrument/:date/:range", FetchController.getFireData);
 Router.get("/save_firedata", RecordController.store_firedata);
 Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 // Router.get("/api/:name_of_place", ApiController.fetchFireData);
-Router.post("/request", RecordController.getFireData);
+Router.get("/request", RecordController.getFireData);
 
 /* For the implementation of the algorthims */
 Router.get("/api/fire_monitor", ApiController.detect_fire);

@@ -1,11 +1,26 @@
 $(document).ready(function(){
 
-    /* 
-    * Set interval to automatically request fire data from FIRMS API
-    */
-    setInterval(function(){
-       
-    }, 2400);
+    let autoRequest = setInterval(function(){
+        // $.ajax({
+        //     url: "/request",
+        //     type: "GET",
+        //     success: function(response){
+        //         console.log("Running... Auto-Requesting fire data from FIRMS");
+        //         if(response){
+        //             // location.reload();
+                    
+        //         }
+        //     },
+        //     error: function(error){
+        //         console.error(error);
+        //         if(error){
+        //             clearInterval(autoRequest);
+        //         }
+        //     }
+        // });
+        console.log("Running... Auto-Requesting fire data from FIRMS");
+    }, 60000);
+    autoRequest();
 
     let convertToTime = (time) => {
         let timeStr = time.toString();
@@ -94,12 +109,18 @@ $(document).ready(function(){
             url: "/check_mapkey",
             type: "GET",
             success: function(response){
-                $(".transaction_limit").text(response.transaction_limit);
-                $(".current_transactions").text(response.current_transactions);
-                $(".transaction_interval").text(response.transaction_interval);
-                $(".map_key").text(response.mapKey);
+                for(let i = 0; i < response.length; i++){
+                    if(response[i].current_transactions < 500){
+                        // console.log(response[i]);
+                        $(".transaction_limit").text(response[i].transaction_limit);
+                        $(".current_transactions").text(response[i].current_transactions);
+                        $(".transaction_interval").text(response[i].transaction_interval);
+                        $(".map_key").text(response[i].mapKey);
 
-                $("input[name='map-key']").val(response.mapKey);
+                        $("input[name='map-key']").val(response[i].mapKey);
+                        break;
+                    }
+                }
             },
             error: function(error){
                 console.error(error);
@@ -129,27 +150,20 @@ $(document).ready(function(){
 
 
     /*
-    * Request fire data from FIRMS API
+    * Manual Request fire data from FIRMS API
     */
    $("#btnRequest").click(function(){
-        const mapKey = $("input[name='map-key']").val();
-        const date = $("input[name='date']").val();
-        const range = $("input[name='range']").val();
-        const instrument = $('#satellite_data').val();
-
-        // let endPoint = `/${mapKey}/${instrument}/PHL/${range}/${date}`;
-        
         $.ajax({
             url: "/request",
-            type: "POST",
-            data: { mapKey: mapKey, date: date, range: range, instrument: instrument },
+            type: "GET",
             success: function(response){
-               
+                if(response){
+                    location.reload();
+                }
             },
             error: function(error){
                 console.error(error);
             }
-        })
-        location.reload();
+        });
    })
 });
