@@ -6,4 +6,5 @@ const config = {
     database: 'firedata_db'
 };
     
+
 module.exports = config;
