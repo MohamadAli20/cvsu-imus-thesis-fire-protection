@@ -132,8 +132,8 @@ $(document).ready(function(){
     */
    $("#btnRequest").click(function(){
         console.log("Manual requesting fire data from FIRMS.");
-        const date = $("input[name='date']").val();
-        const range = $("input[name='range']").val();
+        let date = $("input[name='date']").val();
+        let range = $("input[name='range']").val();
 
         $.ajax({
             url: "/request",
