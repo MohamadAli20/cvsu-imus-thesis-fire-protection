@@ -18,7 +18,7 @@
     <script src="/js/navigation.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg p-0">
+    <nav class="navbar navbar-expand-lg p-0 fixed-top">
         <div class="container-fluid p-0">
             <div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,48 +47,52 @@
             </div>
         </div>
     </nav>
-    <div class="main row">
-        <div class="col-lg-9" id="map"></div>
-        <div class="col-lg-3 map-control">
-            <div class="alert-message">
-                <h4>Detected Fire (within 24 hours):</h4>
-                <div class="fire-details">
-                    <p style="text-align:center">No Fire Data Available</p>
-                </div>
+    <div class="container-fluid">
+        <div class="row main-body">
+            <div class="col-lg-9 col-sm-12 map-container p-0 m-0">
+                <div class="" id="map"></div>
             </div>
-            <div class="navigate-map">
-                <h4>Navigate Map</h4>
-                <input type="radio" class="btn-check" name="area" id="caviteRadio" value="cavite_map" autocomplete="off">
-                <label class="btn btn-outline-warning" for="caviteRadio">Cavite Map</label>
-                <input type="radio" class="border btn-check" name="area" id="imusRadio" value="lgu_map" autocomplete="off" checked>
-                <label class="btn btn-outline-warning" for="imusRadio">Imus Map</label>
-                <div class="form-floating">
-                    <select class="form-select" id="cities" name="city" aria-label="Floating label select example">
-                        <option value="Alfonso">Alfonso</option>
-                        <option value="Amadeo">Amadeo</option>
-                        <option value="Bacoor">Bacoor City</option>
-                        <option value="Carmona">Carmona City</option>
-                        <option value="Cavite City">Cavite City</option>
-                        <option value="Dasmarinas">Dasmariñas City</option>
-                        <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
-                        <option value="General Mariano Alvarez">General Mariano Alvarez</option>
-                        <option value="General Trias">General Trias City</option>
-                        <option value="Imus" selected>Imus City</option>
-                        <option value="Indang">Indang</option>
-                        <option value="Kawit">Kawit</option>
-                        <option value="Magallanes">Magallanes</option>
-                        <option value="Maragondon">Maragondon</option>
-                        <option value="Mendez">Mendez</option>
-                        <option value="Naic">Naic</option>
-                        <option value="Noveleta">Noveleta</option>
-                        <option value="Rosario">Rosario</option>
-                        <option value="Silang">Silang</option>
-                        <option value="Tagaytay">Tagaytay City</option>
-                        <option value="Tanza">Tanza</option>
-                        <option value="Ternate">Ternate</option>
-                        <option value="Trece Martires">Trece Martires City</option>
-                    </select>
-                    <label for="cities">Select City or Municipality</label>
+            <div class="col-lg-3 col-sm-12 map-control">
+                <div class="alert-message">
+                    <h4>Detected Fire (within 24 hours):</h4>
+                    <div class="fire-details">
+                        <p style="text-align:center">No Fire Data Available</p>
+                    </div>
+                </div>
+                <div class="navigate-map">
+                    <h4>Navigate Map</h4>
+                    <input type="radio" class="btn-check" name="area" id="caviteRadio" value="cavite_map" autocomplete="off">
+                    <label class="btn btn-outline-warning" for="caviteRadio">Cavite Map</label>
+                    <input type="radio" class="border btn-check" name="area" id="imusRadio" value="lgu_map" autocomplete="off" checked>
+                    <label class="btn btn-outline-warning" for="imusRadio">Imus Map</label>
+                    <div class="form-floating">
+                        <select class="form-select" id="cities" name="city" aria-label="Floating label select example">
+                            <option value="Alfonso">Alfonso</option>
+                            <option value="Amadeo">Amadeo</option>
+                            <option value="Bacoor">Bacoor City</option>
+                            <option value="Carmona">Carmona City</option>
+                            <option value="Cavite City">Cavite City</option>
+                            <option value="Dasmarinas">Dasmariñas City</option>
+                            <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
+                            <option value="General Mariano Alvarez">General Mariano Alvarez</option>
+                            <option value="General Trias">General Trias City</option>
+                            <option value="Imus" selected>Imus City</option>
+                            <option value="Indang">Indang</option>
+                            <option value="Kawit">Kawit</option>
+                            <option value="Magallanes">Magallanes</option>
+                            <option value="Maragondon">Maragondon</option>
+                            <option value="Mendez">Mendez</option>
+                            <option value="Naic">Naic</option>
+                            <option value="Noveleta">Noveleta</option>
+                            <option value="Rosario">Rosario</option>
+                            <option value="Silang">Silang</option>
+                            <option value="Tagaytay">Tagaytay City</option>
+                            <option value="Tanza">Tanza</option>
+                            <option value="Ternate">Ternate</option>
+                            <option value="Trece Martires">Trece Martires City</option>
+                        </select>
+                        <label for="cities">Select City or Municipality</label>
+                    </div>
                 </div>
             </div>
         </div>
