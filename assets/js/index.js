@@ -380,12 +380,6 @@ $(document).ready(async function(){
             }, 5000);
            
         }
-        else{
-            let noData = document.createElement("p");
-            noData.className = "no-data-label"
-            noData.textContent  = "No fire data available";
-            $(".fire-details").append(noData);
-        }
         addMark();
     }
 
