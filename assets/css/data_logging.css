@@ -10,8 +10,10 @@ main{
     margin-top: 55px;
     /* width: 100%; */
     margin-left: 0;
+    overflow: auto;
 }
 @media screen and (min-width: 992px){
+    
     .side-nav{
         position: fixed;
         margin-top: 54px;
@@ -22,8 +24,11 @@ main{
 }
 
 @media screen and (max-width: 991px){
+    .container{
+        height: 85vh;
+    }
     .side-nav{
-        display: none;
+        background-color: var(--secondary-color);
     }
 }
 .main_body{
