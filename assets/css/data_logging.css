@@ -1,127 +1,55 @@
-nav{
-    border-bottom: 1px solid black;
-    margin: 0;
-}
 main{
-    width: 100%;
-    height: 90%;
-    white-space: nowrap;
-    /* font-size: 0; */
-    top: 10%;
-}
-.main_nav, .main_body{
-    display: inline-block;
-    vertical-align: top;
-    /* height: 100%; */
-    margin: 0;
     padding: 0;
-    font-size: 16px;
+    margin: 0;
 }
-/*Main*/
-main{
+.navbar{
+    /* position: fixed; */
     width: 100%;
-    height: 90%;
-    white-space: nowrap;
-    font-size: 0;
 }
-    .main_nav, .main_body{
-        display: inline-block;
-        vertical-align: top;
+.container{
+    margin-top: 55px;
+    /* width: 100%; */
+    margin-left: 0;
+}
+@media screen and (min-width: 992px){
+    .side-nav{
+        position: fixed;
+        margin-top: 54px;
+        right: 0;
+        background-color: var(--secondary-color);
         height: 100%;
-        margin: 0; /* Remove default margins */
-        padding: 0; /* Remove default padding */
-        font-size: 16px;
     }
-    .main_nav{
-        width: 20%;
-        height: 100%;
-        border-right: 1px solid black;
-        padding: 20px;
+}
+
+@media screen and (max-width: 991px){
+    .side-nav{
+        display: none;
     }
-        .main_nav .options{
-            /* height: 10vh; */
-        }
-            .options select, 
-            .options label,
-            .options input[type='date'],
-            .options input[type='number']{
-                display: block;
-                width: 100%;
-                margin: 5px 0;
-                padding: 5px;
-            }
-            .options div{
-                margin-bottom: 10px;
-                border-bottom: 1px solid black;
-            }
-            .options button{
-                background-color: white;
-                border: 1px solid orange;
-                border-radius: 5px;
-                padding: 5px 10px;
-            }
+}
 .main_body{
-    width: 80%;
-    /* height: 90%; */
-    padding: 20px;
-    overflow: auto;
+    /* overflow: auto; */
+    /* margin-top: 10%; */
+    /* width: 75%; */
 }
-    table{
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-        td, th{
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even){
-            background-color: #dddddd;
-        }
-.modalBackground{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(197, 197, 197, 0.5);
-    top: 0;
-    display: none;
-}
-    .modalMapKey{
-        /* display: none; */
-        background-color: white;
-        border: 1px solid black;
-        width: 400px;
-        /* height: 200px; */
-        margin: 50px auto;
+    /* .table-content{
         padding: 10px;
+    } */
+.main_nav{
+    background-color: var(--secondary-color);
+    z-index: 1;
+    color: var(--main-color);
+}
+    .navigate-map label{
+        border-radius: 0;
     }
-        .modalMapKey input,
-        .modalMapKey select{
-            display: block;
-            width: 100%;
-            margin: 5px 0;
-            padding: 5px;
-        }
-        .modalMapKey div,
-        .modalMapKey span{
-            /* display: block; */
-            width: 100%;
-            /* margin: 5px 0; */
-            padding: 5px 0;
-        }
-        .modalMapKey footer{
-            display: block;
-            text-align: end;
-            margin-top: 10px;
-        }
-            .modalMapKey button{
-                background-color: white;
-                border: 1px solid black;
-                border-radius: 5px;
-                padding: 5px 10px;
-            }
-            #btnRequest{
-                background: #007BFF;
-                color: white;
-            }
+    .form-floating .form-select,
+    .form-floating .form-control{
+        background-color: none;
+        border-radius: 0;
+        margin: 10px 0;
+    }
+    .form-floating .form-select:focus,
+    .form-floating .form-control:focus{
+        box-shadow: none;
+        border: none;
+    }

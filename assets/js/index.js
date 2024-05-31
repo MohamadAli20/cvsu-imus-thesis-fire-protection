@@ -46,7 +46,7 @@ $(document).ready(async function(){
     // let longitude = 120.852260;
     // let zoom = 10;
 
-    let area = "cavite_firedata";
+    let area = "cavite_map";
     
     /* Default requestion information */
     let instrument = "VIIRS_NOAA21_NRT";
@@ -128,6 +128,7 @@ $(document).ready(async function(){
         sendRequest();
     });
     $("select[name='city']").on("input", async function(){
+        $("input[name='area']").prop("checked", false);
         boundaryPath = "lgu/"+$("select[name='city']").val();
         
         await fetchLGUBoundary();
@@ -188,18 +189,16 @@ $(document).ready(async function(){
     /* 
     * Watch if radio button changes 
     */
-    let fireDataArea = $("input[name='area']");
-    fireDataArea.change('input', function(){
-        for(let i = 0; i < fireDataArea.length; i++){
-            if(fireDataArea[i].checked){
-                fireDataArea[i].checked = "true";
-                area = fireDataArea[i].value; /*reassign area value*/
-            }
+    $("input[name='area']").change('input', function(){
+        if($(this).prop("checked")){
+            $("input[name='area']").prop("checked", false);
+            $(this).prop("checked", true);
+            area = $(this).val(); /*reassign area value*/
         }
-        if(area === "ph_firedata"){
+        if(area === "cavite_map"){
             focusCaviteMap();
         }
-        if(area === "cavite_firedata"){
+        if(area === "lgu_map"){
             focusImusMap();
         }
     })
@@ -294,40 +293,98 @@ $(document).ready(async function(){
         // fireDataPh = []; /*for testing*/
         // [{"id":444,"latitude":14.36718,"longitude":120.93541,"name_of_place":"Imus","acq_date":"2024-05-28","acq_time":"0544","track":0.53,"brightness":334.56,"satellite":"N","instrument":"VIIRS","confidence":0,"daynight":"D","version":"2.0NRT","bright_t31":299.26,"scan":0.61,"frp":3.89,"created_at":"2024-05-26T08:51:49.000Z","updated_at":null,"time_ago_since_detected":20,"risk_level":"high","low_risk_threshold":9,"moderate_risk_threshold":50.5,"high_risk_threshold":108.5}]
         // console.log(JSON.stringify(dataString))
-        $(".fire-details").empty();
+        let color;
         if(fireDataPh.length > 0){
-            for(let i = 0; i < dataString.length; i++){
-                // console.log(dataString[i].name_of_place)
-            
+            let len = fireDataPh.length;
+            let num = 0; // Initialize num variable
+            let interval = setInterval(function() {
+                color = "#FFD800";
+                $(".fire-details").empty();
                 let div = document.createElement("div");
                 div.className = "detect-fire";
 
                 let lgu = document.createElement("p");
-                lgu.textContent = "Location: " + dataString[i].name_of_place;
-                
+                lgu.textContent = "Location: "
+                lgu.style.color = color;
+                let lguSpan = document.createElement("span");
+                lguSpan.textContent = dataString[num].name_of_place;
+                lguSpan.style.color = "white";
+                lgu.append(lguSpan);
+
+                let coordinate = document.createElement("p");
+                coordinate.textContent = "Coordinate: "
+                coordinate.style.color = color;
+                let coordinateSpan = document.createElement("span");
+                coordinateSpan.textContent = `${dataString[num].latitude}° N ${dataString[num].longitude}° W`;
+                coordinateSpan.style.color = "white";
+                coordinate.append(coordinateSpan);
+
+                let acquiredDate = document.createElement("p");
+                acquiredDate.textContent = "Acquired date: ";
+                acquiredDate.style.color = color;
+                let acquiredDateSpan = document.createElement("span");
+                acquiredDateSpan.textContent = dataString[num].acq_date;
+                acquiredDateSpan.style.color = "white";
+                acquiredDate.append(acquiredDateSpan);
+
                 let riskLevel = document.createElement("p");
-                riskLevel.textContent  = "Risk level: " + dataString[i].risk_level;
+                riskLevel.textContent = "Risk level: "
+                riskLevel.style.color = color;
+                let riskSpan = document.createElement("span");
+                riskSpan.textContent  = dataString[num].risk_level;
+                riskSpan.style.color = "white";
+                riskLevel.append(riskSpan);
 
                 let instrument = document.createElement("p");
-                instrument.textContent  = "Instrument: " + dataString[i].instrument;
+                instrument.textContent = "Instrument: ";
+                instrument.style.color = color;
+                let instrumentSpan = document.createElement("span");
+                instrumentSpan.textContent  = dataString[num].instrument;
+                instrumentSpan.style.color = "white";
+                instrument.append(instrumentSpan);
+
+                let confidence = document.createElement("p");
+                confidence.textContent = "Confidence level: ";
+                confidence.style.color = color;
+                let confidenceSpan = document.createElement("span");
+                confidenceSpan.textContent  = dataString[num].confidence;
+                confidenceSpan.style.color = "white";
+                confidence.append(confidenceSpan);
+
+                let brightness = document.createElement("p");
+                brightness.textContent = "Brightness: ";
+                brightness.style.color = color;
+                let brightnessSpan = document.createElement("span");
+                brightnessSpan.textContent = dataString[num].brightness;
+                brightnessSpan.style.color = "white";
+                brightness.append(brightnessSpan);
 
                 let time = document.createElement("p");
-                time.textContent = "Detected " + dataString[i].time_ago_since_detected + " hours ago";
-
+                time.textContent = "Detected " + dataString[num].time_ago_since_detected + " hours ago";
+                time.style.color = "#FFD800";
+                
                 div.append(lgu);
+                div.append(coordinate);
+                div.append(acquiredDate);
                 div.append(riskLevel);
                 div.append(instrument);
+                div.append(confidence);
+                div.append(brightness);
                 div.append(time);
 
                 $(".fire-details").append(div);
-            }
+                num++;
+                if (num >= len) {
+                    clearInterval(interval);
+                }
+            }, 5000);
+           
         }
         else{
             let noData = document.createElement("p");
             noData.className = "no-data-label"
             noData.textContent  = "No fire data available";
             $(".fire-details").append(noData);
-
         }
         addMark();
     }

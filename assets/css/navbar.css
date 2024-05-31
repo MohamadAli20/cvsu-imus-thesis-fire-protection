@@ -9,7 +9,11 @@ body{
     height: 100vh;
 }
 /*Navigation*/
+.navbar{
+    color: #FFD800 !important;
+}
 nav{
+    
     position: relative;
     padding: 15px;
     height: 10%;

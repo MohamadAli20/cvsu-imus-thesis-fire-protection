@@ -1,0 +1,76 @@
+@import 'variables.css';
+nav{
+    background-color: var(--navbar-color);
+}
+    .navbar-brand{
+        color: var(--main-color);
+        padding-left: 20px;
+    }
+    .navbar-nav{
+        /* margin: 0 auto; */
+        /* margin-right: 0; */
+        /* padding: 0; */
+    }   
+        .navbar-toggler{
+            border: none;
+            padding: 15px 20px;
+        }
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+        .navbar-nav .nav-link {
+            color: var(--main-color);
+            font-weight: 500;
+            padding: 15px 20px;
+            /* padding-left: 20px; */
+        }
+        .navbar-nav .nav-link.active-link {
+            background-color: var(--secondary-color);
+        }
+        .custom-link:hover{
+            background-color: var(--secondary-color);
+        }
+            .btn-login span{
+                border: 1px solid black;
+                padding: 5px 10px;
+                color: var(--main-color);
+                border: 1px solid var(--main-color);
+            }
+                .btn-login a{
+                    text-decoration: none;
+                }
+            .btn-login a span:hover{
+                background-color: var(--main-color);
+                color: var(--navbar-color);
+            }
+            @media screen and (min-width:992px){
+                .navbar-nav{
+                    margin: 0 auto;
+                    margin-right: 0;
+                }
+                .btn-login{
+                    width: 200px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                body{
+                    font-size: 14px;
+                }
+                .navbar-collapse{
+                    /* display: none; */
+                    /* border: 1px solid black; */
+                    position: absolute;
+                    top: 60px;
+                    width: 100%;
+                    /* height: 100%; */
+                    background-color: var(--navbar-color);
+                }
+            }
+            
+
+/* main{
+    position: fixed;
+}      */
+        

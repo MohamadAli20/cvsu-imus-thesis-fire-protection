@@ -2,9 +2,9 @@ const model = require("../models/ApiRequest");
 
 class RiskAssessment{
     risk_assessment(newData, historicalData){
-        // Function to calculate quantiles
+        /* calculate quantiles */
         function calculateQuantiles(data, quantiles) {
-            // Sort the data in ascending order
+            /* 1. sort the data in ascending order */
             const sortedData = data.slice().sort((a, b) => a - b);
             const results = {};
 
@@ -18,10 +18,10 @@ class RiskAssessment{
             return results;
         }
 
-        // Extract frequencies from historical data
+        /* frequencies from historical data */
         const frequencies = historicalData.map(entry => entry.frequency);
 
-        // Calculate quantiles (25th, 50th, and 75th percentiles)
+        /* Calculate quantiles (25th, 50th, and 75th percentiles) */
         const quantiles = calculateQuantiles(frequencies, [0.25, 0.5, 0.75]);
         const lowRiskThreshold = quantiles[0.25];
         const moderateRiskThreshold = quantiles[0.5];
