@@ -1,0 +1,28 @@
+main{
+    margin-top: 64px;
+    overflow: auto;
+}
+@media screen and (max-width: 768px){
+    .table-responsive table tbody tr td:nth-child(2),
+    .table-responsive table tbody tr th:nth-child(2){
+        width: 40%;
+        word-break: break-all;
+    }
+    .table-responsive table tbody tr td:nth-child(3),
+    .table-responsive table tbody tr th:nth-child(3){
+        /* width: 50%; */
+        word-break: break-all;
+    }
+}
+@media screen and (min-width: 767px){
+    .table-responsive table tbody tr td:nth-child(2),
+    .table-responsive table tbody tr th:nth-child(2){
+        width: 40%;
+        word-break: break-all;
+    }
+    .table-responsive table tbody tr td:nth-child(3),
+    .table-responsive table tbody tr th:nth-child(3){
+        width: 50%;
+        word-break: break-all;
+    }
+}

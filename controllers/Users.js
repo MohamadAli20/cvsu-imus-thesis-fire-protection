@@ -13,6 +13,9 @@ class Users{
     data_logging(req, res){
         res.render("data_logging");
     }
+    api_documentation(req, res){
+        res.render("api_documentation")
+    }
 }
 module.exports = new Users();
 
