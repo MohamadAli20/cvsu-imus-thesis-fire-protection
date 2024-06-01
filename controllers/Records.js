@@ -58,6 +58,7 @@ class Records{
         }
     }
     async getFireData(req, res){ 
+        console.log("Get fire")
         try{
             model.select_mapkey( async(error, row) => {
                 if(error){
@@ -91,7 +92,16 @@ class Records{
                     let lgu = ["Alfonso","Amadeo","Bacoor","Carmona","Cavite City","Dasmarinas","General Emilio Aguinaldo","General Mariano Alvarez","General Trias","Imus","Indang","Kawit","Magallanes","Maragondon","Mendez","Naic","Noveleta","Rosario","Silang","Tagaytay","Tanza","Ternate","Trece Martires"];
                     let instrument = ["MODIS_NRT", "MODIS_SP", "VIIRS_NOAA20_NRT", "VIIRS_NOAA21_NRT", "VIIRS_SNPP_NRT", "VIIRS_SNPP_SP"];
                     let date = new Date();
-                    date = req.body.date || `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() - 3}`
+                    // Subtract 3 days
+                    date.setDate(date.getDate() - 3);
+                    // Extract year, month, and date
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
+                    const day = String(date.getDate()).padStart(2, '0');
+
+                    // Format the result as yyyy-mm-dd
+                    const newDateStr = `${year}-${month}-${day}`;
+                    date = req.body.date || newDateStr;
                     // let range = 3;
                     let range = req.body.range || 3;
 
@@ -126,7 +136,7 @@ class Records{
                         /* request fire data from FIRMS, uncomment this after testing */
                         const response = await axios.get(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/${mapkey[0]}/${instrument[j]}/PHL/${range}/${date}`);
                         // Remove values in req.body after use
-                        
+                        // console.log(`${mapkey[0]}/${instrument[j]}/PHL/${range}/${date}`)                        
                         const dataString = response.data
                         const dataArray = dataString.split('\n').slice(1).map(line => {
                             const [country_id, latitude, longitude, bright_ti4, scan, track, acq_date, acq_time, satellite, instrument, confidence, version, bright_ti5, frp, daynight] = line.split(',');
