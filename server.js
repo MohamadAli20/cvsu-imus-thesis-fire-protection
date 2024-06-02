@@ -1,10 +1,19 @@
 const express = require("express");
 const app = express();
+const session = require('express-session');
 const routes = require("./routes");
 const path = require('path');
 const axios = require('axios');
 const cron = require("node-cron");
 const PORT = process.env.PORT || 8080;  
+
+// session data
+app.use(session({
+    secret: 'bfpimus',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}));
 
 /*using templates*/
 app.set("views", path.join(__dirname, "views"));

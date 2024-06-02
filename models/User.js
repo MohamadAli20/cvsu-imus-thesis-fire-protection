@@ -53,6 +53,31 @@ class User{
             }
         )
     }
+    check_username(account){
+        return new Promise((resolve, reject) => {
+            this.connection.query(
+                "SELECT * FROM users WHERE username = ?",
+                [account.username],
+                (error, row) => {
+                    if(error){
+                        return reject(error);
+                    }
+                    if(row.length > 0){
+                        let isVerified = bcrypt.compareSync(account.password, row[0].password);
+                        if(isVerified){
+                            resolve("success");
+                        }
+                        if(!isVerified){
+                            resolve("failed");
+                        }
+                    }
+                    else{
+                        resolve("failed");
+                    }
+                }
+            );
+        });
+    }
 }
 
 module.exports = new User();

@@ -5,6 +5,7 @@ const UserController = require("./controllers/Users");
 const FetchController = require("./controllers/FetchData");
 const RecordController = require("./controllers/Records");
 const ApiController = require("./controllers/ApiRequests");
+const User = require("./models/User");
 
 /* Endpoints to render pages */
 Router.get("/", UserController.index);
@@ -26,6 +27,7 @@ Router.get("/request", RecordController.getFireData);
 Router.post("/request", RecordController.getFireData);
 /* Register and login account */
 Router.post("/account_register", UserController.add_account); 
+Router.post("/account_login", UserController.retrieve_account)
 
 /* API endpoints */
 /* For the implementation of the algorithms */

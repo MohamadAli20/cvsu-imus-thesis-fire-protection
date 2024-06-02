@@ -3,18 +3,19 @@ $(document).ready(function(){
     $(".submit-submit").click(function(){
         const username = $("input[name='username']").val();
         const email = $("input[name='email']").val();
+        const code = $("input[name='code']").val();
         const password = $("input[name='password']").val();
         const confirmPasssword = $("input[name='confirm-password']").val();
         
         $.ajax({
             url: "/account_register",
             type: "POST",
-            data: { username: username, email: email, password: password, confirmPassword: confirmPasssword },
+            data: { username: username, email: email, code: code, password: password, confirmPassword: confirmPasssword },
             success: function(response){
                 $(".alert-container").remove();
                 if(response.length > 0){
                     let alertContainer = document.createElement("div");
-                    alertContainer.className = "col-lg-5 alert-container";
+                    alertContainer.className = "col-lg-5 alert-container vibrate";
                     for(let i = 0; i < response.length; i++){
                         let pAlert = document.createElement("p");
                         pAlert.style.border = "2px solid #FFD800";
@@ -41,16 +42,17 @@ $(document).ready(function(){
                     // clear
                     $("input[name='username']").val("");
                     $("input[name='email']").val("");
+                    $("input[name='code']").val("");
                     $("input[name='password']").val("");
                     $("input[name='confirm-password']").val("");
-        
                 }
             },
             error: function(error){
                 console.error(error);
             }
         });
-
-
     });
+    setInterval(function(){
+        $(".alert-container").remove();
+    }, 7000);
 })

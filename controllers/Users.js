@@ -1,9 +1,9 @@
 const model = require("../models/User");
-
+const session = require('express-session');
 class Users{
     /*render view files*/
     index(req, res){
-        res.render("index");
+        res.render('index');
     }
     fire_data(req, res){
         res.render("fire_data");
@@ -19,16 +19,20 @@ class Users{
     }
     // 
     async add_account(req, res){
-        const { username, email, password, confirmPassword } = req.body;
+        const adminCode = "BFP12345";
+        const { username, email, code, password, confirmPassword } = req.body;
         let alertMessage = [];
 
         /* Form validation */ 
-        if(username === "" || email === "" || password === "" || confirmPassword === ""){
+        if(username === "" || email === "" || code === "" || password === "" || confirmPassword === ""){
             alertMessage.push("Fill up all information");
         }
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(email !== "" && !emailRegex.test(email)) {
             alertMessage.push("Invalid email format");
+        }
+        if(code !== "" && code !== adminCode){
+            alertMessage.push("Code is incorrect");
         }
         if(password !== confirmPassword && password !== "" && confirmPassword !== ""){
             alertMessage.push("Passwords do not match");
@@ -64,8 +68,33 @@ class Users{
         }
         res.json(alertMessage);
     }
-    authenticate_account(req, res){
+    async retrieve_account(req, res){
+        const { username, password } = req.body;
+        let alertMessage = [];
+
+        /* Form validation */ 
+        if(username === "" || password === ""){
+            alertMessage.push("Fill up all information");
+        }
+        if(username !== "" && password !== ""){
+            try{
+                /*if found return array with elements, meaning it is already exists */ 
+                const result = await model.check_username(req.body);
+                // const emailArrr = await model.check_email(email);
+                if(result === "failed"){
+                    alertMessage.push("Login failed");
+                }
+                if(result === "success"){
+                    req.session.username = username;
+                    return res.json({username});
+                }
+            }catch(error){
+                console.error(error);
+            }
+        }
         
+
+        res.json(alertMessage);
     }
 }
 module.exports = new Users();

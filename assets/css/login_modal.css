@@ -1,6 +1,8 @@
 /* @import var */
+.modal-dialog{
+    margin-top: 60px;
+}
 .modal-content{
-    margin-top: 100px;
     border-radius: 0;
     background-color: var(--secondary-color);
     color: var(--main-color);
@@ -66,4 +68,15 @@
         text-align: right;
         padding: 0;
     }
+}
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.vibrate {
+    animation: vibrate 0.3s linear;
 }

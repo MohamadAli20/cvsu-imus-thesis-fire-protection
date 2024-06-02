@@ -150,5 +150,9 @@ $(document).ready(function(){
         range = $("input[name='range']").val("");
 
         location.reload();
-   })
+   });
+
+
+   let isLoggedIn = localStorage.getItem("username");
+   console.log(isLoggedIn)
 });
