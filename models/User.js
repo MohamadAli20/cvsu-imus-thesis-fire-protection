@@ -53,7 +53,7 @@ class User{
             }
         )
     }
-    check_username(account){
+    check_account(account){
         return new Promise((resolve, reject) => {
             this.connection.query(
                 "SELECT * FROM users WHERE username = ?",

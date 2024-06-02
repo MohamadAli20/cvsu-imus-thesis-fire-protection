@@ -48,6 +48,8 @@ class Users{
                 /*if found return array with elements, meaning it is already exists */ 
                 const usernameArr = await model.check_username(username);
                 const emailArrr = await model.check_email(email);
+                console.log(usernameArr)
+                console.log(emailArrr)
                 if(usernameArr.length > 0) {
                     alertMessage.push("Username already exists");
                 }
@@ -79,7 +81,7 @@ class Users{
         if(username !== "" && password !== ""){
             try{
                 /*if found return array with elements, meaning it is already exists */ 
-                const result = await model.check_username(req.body);
+                const result = await model.check_account(req.body);
                 // const emailArrr = await model.check_email(email);
                 if(result === "failed"){
                     alertMessage.push("Login failed");
