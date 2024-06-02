@@ -13,6 +13,7 @@
     <!-- Styling -->
     <link rel="stylesheet" href="/css/navigation.css">
     <link rel="stylesheet" href="/css/data_logging.css">
+    <link rel="stylesheet" href="/css/login_modal.css">
     <!-- JS -->
     <script src="/js/navigation.js"></script>
     <script src="/js/data_logging.js"></script>
@@ -44,7 +45,7 @@
                         <a class="nav-link custom-link" href="/api_documentation">API Documentation</a>
                     </li>
                     <li class="nav-item btn-login">
-                        <a class="nav-link" href="#"><span>Login</span></a>
+                        <a class="nav-link" href="#"><span data-bs-toggle="modal" data-bs-target="#loginModal">Login</span></a>
                     </li>
                 </ul>
             </div>
@@ -53,8 +54,8 @@
     <div class="row">
         <div class="container col-lg-9">
             <div class="table-responsive">
-                <table class="table-content table table-striped">
-                    <tr >
+                <table class="table-content table table-sm-12 table-striped">
+                    <tr>
                         <th>LGU</th>
                         <th>Latitude</th>
                         <th>Longitude</th>
@@ -122,7 +123,39 @@
                 <!-- <button id="openStatus">Get FIRMS Fire Data</button> -->
             </form>
         </div>
-    </div>  
+    </div>
+    <!-- Login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-2">
+                        <input class="form-control" name="username" id="username" type="text" placeholder="Username">
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row w-100">
+                        <div class="col-lg-8 col-sm-12 register-label px-0">
+                            Don't have an account? <a href="/register">Register</a>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 login-buttons px-0">
+                            <button type="button" id="btn-cancel" class="btn py-1" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" id="btn-login" class="btn py-1">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         
     </main>

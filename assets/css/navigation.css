@@ -34,7 +34,7 @@ nav{
                 border: 1px solid black;
                 padding: 5px 10px;
                 color: var(--main-color);
-                border: 1px solid var(--main-color);
+                border: 2px solid var(--main-color);
             }
                 .btn-login a{
                     text-decoration: none;

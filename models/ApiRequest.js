@@ -46,8 +46,6 @@ class ApiRequest{
                 query += ` UNION ALL `;
             }
         }
-    
-        console.log(query);
         this.connection.query(query, values, (error, rows) => {
             if (error) {
                 callback(error, null);

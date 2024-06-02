@@ -21,6 +21,7 @@
     "@turf/boolean-point-in-polygon": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
     "csv-parser": "^3.0.0",
     "ejs": "^3.1.10",
     "express": "^4.19.2",

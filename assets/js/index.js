@@ -67,7 +67,7 @@ $(document).ready(async function(){
     /* Add Fire Station Marker on the map*/
     let stationIcon = L.icon({
         iconUrl: '/images/firetruck.svg',
-        iconSize: [30, 30], /* Size of the icon */
+        iconSize: [20, 20], /* Size of the icon */
         iconAnchor: [20, 40], /* Point of the icon which will correspond to marker's location */
     });
     // Imus
@@ -223,7 +223,7 @@ $(document).ready(async function(){
     /* Define active fire icon */
     let fireIcon = L.icon({
         iconUrl: '/images/fire.svg',
-        iconSize: [40, 40], /* Size of the icon */
+        iconSize: [20, 20], /* Size of the icon */
         iconAnchor: [20, 40], /* Point of the icon which will correspond to marker's location */
     });
     /* Define non-active fire icon */

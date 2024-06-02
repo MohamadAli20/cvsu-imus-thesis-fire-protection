@@ -1,0 +1,62 @@
+body{
+    background-color: var(--secondary-color);
+}
+main{
+    margin-top: 70px;
+}
+.form-container{
+    /* background-color: #FFFFFF; */
+    /* background-color: var(--secondary-color); */
+    color: var(--main-color);
+    display: block;
+}
+    .form-container div{
+        margin: 0 auto;
+    }
+    .form-floating{
+        color: #999999;
+    }
+    .form-floating .form-control{
+        /* font-size: 16px; */
+        border-radius: 0;
+        margin-bottom: 15px;
+    }
+    .form-floating .form-control:focus {
+        outline: none; /* Removes the default outline */
+        box-shadow: none; /* Removes the box shadow */
+        border: none; /* Removes the border */
+    }
+    #btn-cancel{
+        border: 1px solid var(--main-color) !important;
+        border-radius: 0;
+        color: var(--main-color);
+        font-weight: 500;
+        opacity: 0.8;
+    }
+    #btn-login{
+        background-color: var(--main-color);
+        border-radius: 0;
+        font-weight: 500;
+        color: var(--secondary-color);
+        opacity: 0.8;
+    }
+    #btn-cancel:hover,
+    #btn-login:hover{
+        opacity: 1;
+    }
+    .register-label{
+        margin-left: 0;
+        opacity: 0.8;
+    }
+        .register-label a{
+            color: #FFFFFF;
+        }
+        .register-label a:hover{
+            color: var(--main-color);
+        }
+    @media screen and (min-width: 425px){
+        .login-buttons{
+            text-align: right;
+            padding: 0;
+        }
+    }
