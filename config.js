@@ -13,5 +13,6 @@ const config = {
 //     password: '',   
 //     database: 'ph_fire_data'
 // };
+    
 
 module.exports = config;

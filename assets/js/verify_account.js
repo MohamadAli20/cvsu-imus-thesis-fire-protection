@@ -33,9 +33,5 @@ $(document).ready(function(){
             }
         })
     })
-
-    setInterval(function(){
-        $(".alert-container").remove();
-    }, 7000);
-
+    
 })
