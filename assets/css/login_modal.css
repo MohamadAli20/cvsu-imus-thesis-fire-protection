@@ -24,9 +24,6 @@
     padding-top: 0;
     padding-bottom: 0;
 }
-.form-floating{
-    /* margin-bottom: 10px; */
-}
     .form-floating .form-control{
         border-radius: 0;
     }

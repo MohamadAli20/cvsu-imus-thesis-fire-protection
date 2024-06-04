@@ -18,6 +18,14 @@ main{
 .spinner-border span{
     color: var(--main-color);
 }
+.mapkey_link a{
+    color: var(--main-color);
+    text-decoration: none;
+    opacity: 0.8;
+}
+.mapkey_link a:hover{
+    opacity: 1;
+}
 @media screen and (min-width: 992px){
     .side-nav{
         position: fixed;
