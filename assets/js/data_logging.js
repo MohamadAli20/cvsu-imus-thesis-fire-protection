@@ -4,7 +4,13 @@ $(document).ready(function(){
         let timeStr = time.toString();
         let hour = timeStr.slice(0, 2);
         let minute = timeStr.slice(2, 4);
-        return `${hour}:${minute}`;
+        let len = hour+minute;
+        if(len.length === 3){
+            return `0${hour}:${minute}`;
+        }
+        else{
+            return `${hour}:${minute}`;
+        }
     }
 
     let addTableRow = (response) => {
@@ -116,15 +122,40 @@ $(document).ready(function(){
         const date = $("input[name='date']").val();
         const range = $("input[name='range']").val();
 
+        $(".alert-container").remove();
+        let alertContainer = document.createElement("div");
+        alertContainer.className = "col-lg-12 alert-container vibrate";
+
+        let pLoading = document.createElement("p");
+        pLoading.className = "loading d-flex justify-content-center align-items-center";
+        pLoading.style.border = "2px solid #FFD800";
+        pLoading.style.padding = "5px 0"; 
+        pLoading.style.textAlign = "center";
+        pLoading.style.color = "#FFD800"
+        pLoading.textContent = "Loading . . . ";
+
+        let divSpinner = document.createElement("div");
+        divSpinner.className = "spinner-border";
+        divSpinner.setAttribute("role", "status");
+
+        let spanSpinner = document.createElement("span");
+        spanSpinner.className = "sr-only";
+        divSpinner.append(spanSpinner);
+        pLoading.append(divSpinner);
+        alertContainer.append(pLoading)
+        // alertContainer.append(divSpinner);
+        $(".modal-dialog").prepend(alertContainer);
         $.ajax({
             url: "/request",
             type: "POST",
             data: { mapkey: mapkey, date: date, range: range },
             success: function(response){
-                $(".alert-container").remove();
+                
                 let alertContainer = document.createElement("div");
                 alertContainer.className = "col-lg-12 alert-container vibrate";
+
                 if(response.length > 0){
+                    $(".loading").remove();
                     let pAlert = document.createElement("p");
                     pAlert.style.border = "2px solid #FFD800";
                     pAlert.style.padding = "5px 0"; 
@@ -135,6 +166,7 @@ $(document).ready(function(){
                     $(".modal-dialog").prepend(alertContainer);
                 }
                 else{
+                    $(".loading").remove();
                     let pAlert = document.createElement("p");
                     pAlert.style.border = "2px solid #FFD800";
                     pAlert.style.padding = "5px 0"; 
@@ -144,16 +176,13 @@ $(document).ready(function(){
                     alertContainer.append(pAlert);
                     $(".modal-dialog").prepend(alertContainer);
                 }
+                location.reload();
             },
             error: function(error){
                 console.error(error);
             }
         });
-       
-
-       
-
-        // location.reload();
+        
     });
     
 });

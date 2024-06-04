@@ -15,6 +15,9 @@ main{
 #openStatus{
     display: none;
 }
+.spinner-border span{
+    color: var(--main-color);
+}
 @media screen and (min-width: 992px){
     .side-nav{
         position: fixed;
@@ -31,8 +34,6 @@ main{
     .side-nav{
         background-color: var(--secondary-color);
     }
-}
-.main_body{
 }
 .main_nav{
     background-color: var(--secondary-color);

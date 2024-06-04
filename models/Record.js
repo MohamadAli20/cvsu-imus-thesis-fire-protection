@@ -84,7 +84,7 @@ class Record{
     insert_firedata(firedata, callback){
         const date = new Date();
         const today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-
+        console.log("Model", firedata)
         for(let i = 0; i < firedata.length; i++){
             this.connection.query(
                 'INSERT INTO cavite2024(latitude, longitude, name_of_place, acq_date, acq_time, track, brightness, satellite, instrument, confidence, daynight, version, bright_t31, scan, frp, created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', 

@@ -113,22 +113,7 @@ class Records{
                     for(let j = 0; j < instrument.length; j++){                        
                         /* For testing: Add Cavite latitude and longitude */
                         // const response = `country_id,latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,instrument,confidence,version,bright_ti5,frp,daynight
-                        // PHL,6.02421,125.09252,329.96,0.42,0.45,2024-05-26,440,N,VIIRS,n,2.0NRT,295.39,2.21,D
-                        // PHL,6.25881,124.97111,334.36,0.42,0.45,2024-05-26,440,N,VIIRS,n,2.0NRT,291.79,2.98,D
-                        // PHL,7.25555,124.30717,331.08,0.45,0.47,2024-05-26,440,N,VIIRS,n,2.0NRT,290.88,3.31,D
-                        // PHL,8.21561,125.60084,337.03,0.54,0.42,2024-05-26,440,N,VIIRS,n,2.0NRT,289.3,8.18,D
-                        // PHL,8.42972,124.3806,331.76,0.43,0.46,2024-05-26,440,N,VIIRS,n,2.0NRT,292.87,3.44,D
-                        // PHL,8.47512,126.26788,334.38,0.49,0.41,2024-05-26,440,N,VIIRS,n,2.0NRT,289.59,3.83,D
-                        // PHL,18.04554,121.33256,331.74,0.46,0.47,2024-05-26,442,N,VIIRS,n,2.0NRT,273.11,5.11,D
-                        // PHL,18.46152,121.32703,326.22,0.45,0.47,2024-05-26,442,N,VIIRS,n,2.0NRT,288.86,2.56,D
-                        // PHL,7.15188,124.33049,327.8,0.47,0.64,2024-05-27,419,N,VIIRS,n,2.0NRT,288.1,4.67,D
-                        // PHL,7.15385,124.32948,336.59,0.47,0.64,2024-05-27,419,N,VIIRS,n,2.0NRT,287.9,4.89,D
-                        // PHL,8.07308,123.92918,326.37,0.48,0.65,2024-05-27,419,N,VIIRS,n,2.0NRT,273.55,4.07,D
-                        // PHL,16.19072,120.57519,302.58,0.37,0.58,2024-05-27,1656,N,VIIRS,n,2.0NRT,286.18,0.75,N
-                        // PHL,7.9181,126.17299,302.95,0.42,0.37,2024-05-27,1658,N,VIIRS,n,2.0NRT,288.73,0.53,N
-                        // PHL,5.81432,121.22906,337.05,0.48,0.48,2024-05-28,542,N,VIIRS,n,2.0NRT,288.97,6.16,D
-                        // PHL,6.00074,125.35449,349.39,0.47,0.64,2024-05-28,542,N,VIIRS,n,2.0NRT,290.13,5.59,D
-                        // PHL,14.405229,120.914345,349.39,0.47,0.64,2024-05-29,542,N,VIIRS,n,2.0NRT,290.13,5.59,D`
+                        // PHL,14.405229,120.914345,349.39,0.47,0.64,2024-06-04,742,N,VIIRS,n,2.0NRT,290.13,5.59,D`
                         // const dataString = response; /*  remove this after testing*/
                         
                         /* request fire data from FIRMS, uncomment this after testing */
@@ -153,7 +138,6 @@ class Records{
                                 track: parseFloat(track)
                             };
                         });
-
                         if(dataArray.length > 0 ){
                             for(let k = 0; k < dataArray.length; k++){
                                 phFireData.push(dataArray[k]);
