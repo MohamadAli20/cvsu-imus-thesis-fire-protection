@@ -25,7 +25,8 @@ Router.get("/save_firedata", RecordController.store_firedata);
 Router.get("/insert_imus_firedata", RecordController.store_imus_firedata);
 // Router.get("/api/:name_of_place", ApiController.fetchFireData);
 Router.get("/request", RecordController.getFireData);
-Router.post("/request", RecordController.getFireData);
+Router.post("/manual_request", RecordController.getManualFireData);
+// Router.post("/request", RecordController.getFireData);
 /* Register and login account */
 Router.post("/account_register", UserController.add_account); 
 Router.post("/account_login", UserController.retrieve_account)

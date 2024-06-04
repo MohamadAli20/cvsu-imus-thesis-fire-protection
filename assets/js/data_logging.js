@@ -81,32 +81,6 @@ $(document).ready(function(){
         retrieveFireData();
     });
 
-    /* retrieve map key status */
-    let checkMapKey = () => {
-        $.ajax({
-            url: "/check_mapkey",
-            type: "GET",
-            success: function(response){
-                for(let i = 0; i < response.length; i++){
-                    if(response[i].current_transactions < 500){
-                        // console.log(response[i]);
-                        $(".transaction_limit").text(response[i].transaction_limit);
-                        $(".current_transactions").text(response[i].current_transactions);
-                        $(".transaction_interval").text(response[i].transaction_interval);
-                        $(".map_key").text(response[i].mapKey);
-
-                        $("input[name='map-key']").val(response[i].mapKey);
-                        break;
-                    }
-                }
-            },
-            error: function(error){
-                console.error(error);
-            }
-        })
-    }
-    checkMapKey();
-
     /*
     * Manual Request fire data from FIRMS API
     */
@@ -140,7 +114,7 @@ $(document).ready(function(){
         // alertContainer.append(divSpinner);
         $(".modal-dialog").prepend(alertContainer);
         $.ajax({
-            url: "/request",
+            url: "/manual_request",
             type: "POST",
             data: { mapkey: mapkey, date: date, range: range },
             success: function(response){
@@ -178,5 +152,5 @@ $(document).ready(function(){
         });
         
     });
-    
+   
 });
