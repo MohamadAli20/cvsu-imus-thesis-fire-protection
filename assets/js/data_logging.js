@@ -1,16 +1,10 @@
 $(document).ready(function(){
 
     let convertToTime = (time) => {
-        let timeStr = time.toString();
-        let hour = timeStr.slice(0, 2);
-        let minute = timeStr.slice(2, 4);
-        let len = hour+minute;
-        if(len.length === 3){
-            return `0${hour}:${minute}`;
-        }
-        else{
-            return `${hour}:${minute}`;
-        }
+        let timeStr = time.toString().padStart(4, '0');
+        let hours = timeStr.slice(0, 2);
+        let minutes = timeStr.slice(2);
+        return `${hours}:${minutes}`;
     }
 
     let addTableRow = (response) => {
