@@ -170,7 +170,7 @@ $(document).ready(function(){
                     alertContainer.append(pAlert);
                     $(".modal-dialog").prepend(alertContainer);
                 }
-                location.reload();
+                // location.reload();
             },
             error: function(error){
                 console.error(error);
