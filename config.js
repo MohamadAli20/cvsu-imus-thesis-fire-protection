@@ -1,4 +1,3 @@
-
 const config = {
     host: 'nodedatabase.cpeies8qgyq4.ap-southeast-1.rds.amazonaws.com',
     user: 'admin',
@@ -14,5 +13,4 @@ const config = {
 //     database: 'ph_fire_data'
 // };
     
-
 module.exports = config;

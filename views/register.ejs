@@ -15,10 +15,12 @@
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/login_modal.css">
     <!-- JS -->
-    <script src="/js/navigation.js"></script>
     <script src="/js/register.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/verify_account.js"></script>
 </head>
 <body>
+    <!--  -->
     <nav class="navbar navbar-expand-lg p-0 fixed-top">
         <div class="container-fluid p-0">
             <div>
@@ -48,18 +50,19 @@
             </div>
         </div>
     </nav>
+    <!--  -->
     <main class="container">
-        <div class="row form-container m-auto">
+        <form class="row form-container m-auto">
             <div class="col-lg-5">
                 <h4>Register an admin account</h4>
                 <div class="form-floating">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                    <input type="text" class="form-control" name="register_username" id="register-username" placeholder="Username">
                     <label for="username">Username</label>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="form-floating">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="register_email" id="register_email" placeholder="Email">
                     <label for="email">Email</label>
                 </div>
             </div>
@@ -71,13 +74,13 @@
             </div>
             <div class="col-lg-5">
                 <div class="form-floating">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                    <input type="password" class="form-control" name="register_password" id="register_password" placeholder="password">
                     <label for="password">Password</label>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="form-floating">
-                    <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="confirm password">
+                    <input type="password" class="form-control" name="register_confirm_password" id="register_confirm_password" placeholder="confirm password">
                     <label for="confirm-password">Confirm password</label>
                 </div>
             </div>
@@ -87,11 +90,11 @@
                         Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                     </div>
                     <div class="col-lg-5 col-sm-12 login-buttons px-0">
-                        <button type="button" id="btn-login" class="btn submit-submit py-1">Submit</button>
+                        <button type="button" id="btn-register" class="btn submit-submit py-1">Submit</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
     <!-- Login modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

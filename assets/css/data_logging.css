@@ -12,8 +12,10 @@ main{
     margin-left: 0;
     overflow: auto;
 }
+#openStatus{
+    display: none;
+}
 @media screen and (min-width: 992px){
-    
     .side-nav{
         position: fixed;
         margin-top: 54px;
@@ -22,7 +24,6 @@ main{
         height: 100%;
     }
 }
-
 @media screen and (max-width: 991px){
     .container{
         height: 85vh;
@@ -32,15 +33,7 @@ main{
     }
 }
 .main_body{
-    /* overflow: auto; */
-    /* margin-top: 10%; */
-    /* width: 75%; */
 }
-    /* .table-content{
-        padding: 10px;
-    } */
-
-    
 .main_nav{
     background-color: var(--secondary-color);
     z-index: 1;

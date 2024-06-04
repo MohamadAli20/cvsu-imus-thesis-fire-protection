@@ -347,17 +347,9 @@ $(document).ready(async function(){
                 confidence.textContent = "Confidence level: ";
                 confidence.style.color = color;
                 let confidenceSpan = document.createElement("span");
-                confidenceSpan.textContent  = dataString[num].confidence;
+                confidenceSpan.textContent  = dataString[num].confidence + "%";
                 confidenceSpan.style.color = "white";
                 confidence.append(confidenceSpan);
-
-                let brightness = document.createElement("p");
-                brightness.textContent = "Brightness: ";
-                brightness.style.color = color;
-                let brightnessSpan = document.createElement("span");
-                brightnessSpan.textContent = dataString[num].brightness;
-                brightnessSpan.style.color = "white";
-                brightness.append(brightnessSpan);
 
                 let time = document.createElement("p");
                 time.textContent = "Detected " + dataString[num].time_ago_since_detected + " hours ago";
@@ -369,7 +361,6 @@ $(document).ready(async function(){
                 div.append(riskLevel);
                 div.append(instrument);
                 div.append(confidence);
-                div.append(brightness);
                 div.append(time);
 
                 $(".fire-details").append(div);

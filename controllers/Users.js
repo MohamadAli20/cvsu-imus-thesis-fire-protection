@@ -17,6 +17,9 @@ class Users{
     register(req, res){
         res.render("register");
     }
+    frequent_ask_questions(req, res){
+        res.render("frequent_ask_question");
+    }
     // 
     async add_account(req, res){
         const adminCode = "BFP12345";
@@ -48,8 +51,7 @@ class Users{
                 /*if found return array with elements, meaning it is already exists */ 
                 const usernameArr = await model.check_username(username);
                 const emailArrr = await model.check_email(email);
-                console.log(usernameArr)
-                console.log(emailArrr)
+                
                 if(usernameArr.length > 0) {
                     alertMessage.push("Username already exists");
                 }

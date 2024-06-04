@@ -33,7 +33,7 @@ main{
         font-weight: 500;
         opacity: 0.8;
     }
-    #btn-login{
+    #btn-register{
         background-color: var(--main-color);
         border-radius: 0;
         font-weight: 500;
@@ -41,7 +41,7 @@ main{
         opacity: 0.8;
     }
     #btn-cancel:hover,
-    #btn-login:hover{
+    #btn-register:hover{
         opacity: 1;
     }
     .register-label{

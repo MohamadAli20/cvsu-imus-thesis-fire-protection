@@ -42,7 +42,7 @@
     font-weight: 500;
     opacity: 0.8;
 }
-#btn-login{
+#btn-login, #btn-logout, #btn-request{
     background-color: var(--main-color);
     border-radius: 0;
     font-weight: 500;
@@ -50,7 +50,8 @@
     opacity: 0.8;
 }
 #btn-cancel:hover,
-#btn-login:hover{
+#btn-login:hover,
+#btn-logout:hover{
     opacity: 1;
 }
 .register-label{

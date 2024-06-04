@@ -30,7 +30,7 @@ nav{
         .custom-link:hover{
             background-color: var(--secondary-color);
         }
-            .btn-login span{
+            .btn-login span, #openStatus{
                 border: 1px solid black;
                 padding: 5px 10px;
                 color: var(--main-color);
@@ -39,9 +39,18 @@ nav{
                 .btn-login a{
                     text-decoration: none;
                 }
-            .btn-login a span:hover{
+            .btn-login a span:hover,
+            .btn-logout:hover{
                 background-color: var(--main-color);
                 color: var(--navbar-color);
+                cursor: pointer;
+            }
+            #openStatus{
+                background-color: var(--secondary-color);
+            }
+            #openStatus:hover{
+                background-color: var(--main-color);
+                color: var(--secpndary-color);
             }
             @media screen and (min-width:992px){
                 .navbar-nav{

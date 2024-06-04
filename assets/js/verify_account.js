@@ -2,12 +2,12 @@ $(document).ready(function(){
     $("#btn-login").click(function(){
         const username = $("input[name='username']").val();
         const password = $("input[name='password']").val();
-
         $.ajax({
             url: "/account_login",
             type: "POST",
             data: { username: username, password: password },
             success: function(response){
+                $(".register-alert-container").remove();
                 $(".alert-container").remove();
                 if(response.length > 0){
                     let alertContainer = document.createElement("div");

@@ -1,7 +1,14 @@
+body{
+    background-color: var(--secondary-color);
+}
 main{
     margin-top: 64px;
     overflow: auto;
 }
+    main h3{
+        font-size: 20px;
+        color: var(--main-color);
+    }
 @media screen and (max-width: 768px){
     .table-responsive table tbody tr td:nth-child(2),
     .table-responsive table tbody tr th:nth-child(2){

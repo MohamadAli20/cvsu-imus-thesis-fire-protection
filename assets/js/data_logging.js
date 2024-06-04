@@ -107,52 +107,53 @@ $(document).ready(function(){
     }
     checkMapKey();
 
-    $("#openStatus").click(function(e){
-        e.preventDefault();
-        $(".modalBackground").css({
-            "display": "block"
-        })
-        const date = new Date();
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        const today = `${year}-${month}-${day}`;
-        $("#date").val(today);
-    });
-    $("#btnClose").click(function(e){
-        e.preventDefault();
-        $(".modalBackground").css({
-            "display": "none"
-        })
-    });
-
-
     /*
     * Manual Request fire data from FIRMS API
     */
-   $("#btnRequest").click(function(){
+    $("#btn-request").click(function(){
         console.log("Manual requesting fire data from FIRMS.");
-        let date = $("input[name='date']").val();
-        let range = $("input[name='range']").val();
+        const mapkey = $("input[name='mapkey']").val();
+        const date = $("input[name='date']").val();
+        const range = $("input[name='range']").val();
 
         $.ajax({
             url: "/request",
             type: "POST",
-            data: { date: date, range: range },
+            data: { mapkey: mapkey, date: date, range: range },
             success: function(response){
-                console.log(response);
+                $(".alert-container").remove();
+                let alertContainer = document.createElement("div");
+                alertContainer.className = "col-lg-12 alert-container vibrate";
+                if(response.length > 0){
+                    let pAlert = document.createElement("p");
+                    pAlert.style.border = "2px solid #FFD800";
+                    pAlert.style.padding = "5px 0"; 
+                    pAlert.style.textAlign = "center";
+                    pAlert.style.color = "#FFD800"
+                    pAlert.textContent = "Data Available"
+                    alertContainer.append(pAlert);
+                    $(".modal-dialog").prepend(alertContainer);
+                }
+                else{
+                    let pAlert = document.createElement("p");
+                    pAlert.style.border = "2px solid #FFD800";
+                    pAlert.style.padding = "5px 0"; 
+                    pAlert.style.textAlign = "center";
+                    pAlert.style.color = "#FFD800"
+                    pAlert.textContent = "No Data Available"
+                    alertContainer.append(pAlert);
+                    $(".modal-dialog").prepend(alertContainer);
+                }
             },
             error: function(error){
                 console.error(error);
             }
         });
-        date = $("input[name='date']").val("");
-        range = $("input[name='range']").val("");
+       
 
-        location.reload();
-   });
+       
 
-
-   let isLoggedIn = localStorage.getItem("username");
-   console.log(isLoggedIn)
+        // location.reload();
+    });
+    
 });
