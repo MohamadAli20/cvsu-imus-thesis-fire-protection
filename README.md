@@ -38,5 +38,31 @@ Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
 <img src="https://drive.google.com/uc?id=18MZl6LOj7vryUhfza9F-Lf-LyXrFQqUe">
 <img src="https://drive.google.com/uc?id=1uNY9bKAKfzStnMMFGAoGQZmRZrMTxJv1">
 
-### Data Loggin
+### Data Logging
+<img src="https://drive.google.com/uc?id=12c_hPONEK9hkX-CSyLXmP6jEcIGcy_B2">
+<img src="https://drive.google.com/uc?id=1s-SYj7uiaP33Hnx4VxJCSykR8TeMn59L">
+<img src="https://drive.google.com/uc?id=16AIryR1JNw-mFZB9t0UfNii6eJQn3LS2">
+
+### API Documentation
+<img src="https://drive.google.com/uc?id=1UHkfLg1egfymmFjcVJ-p8zgtD1w03GGb">
+
+### Frequently Asked Questions
+<img src="https://drive.google.com/uc?id=1iHa_b2zrFppmTQz-rcbytIjh5TUiDdkX">
+
+### Login
+<img src="https://drive.google.com/uc?id=1WvnbMnTCB3eIWoxV8d9p8hE79yi_8ki7">
+<img src="https://drive.google.com/uc?id=1IccD9YPwe6-HymIldayY_Y60fwuCJMOd">
+<img src="https://drive.google.com/uc?id=1oEIheVnpGv21BiXAwKzUrzHFA89zr3DI">
+
+### Registration
+<img src="https://drive.google.com/uc?id=1jo5wAldZFcuUWNCUC6-Yqcy4bAzjc-SS">
+<img src="https://drive.google.com/uc?id=1a_IAyL9WIUDjWggyVjryGF3ouJY0yzMd">
+<img src="https://drive.google.com/uc?id=1Ak1c21feFcO-fsssYCpcK_yYbVOxglnB">
+<img src="https://drive.google.com/uc?id=1dQ3UwyAzM30SGg1BK-t58_zOP8yl9641">
+<img src="https://drive.google.com/uc?id=1fzELbXI6-NOsOUzGBW9sB3M4jj0SYxJz">
+<img src="https://drive.google.com/uc?id=1PrlyI0tTXjDGSGaORk0QRaWWpKzyFP-J">
+
+
+
+
 
