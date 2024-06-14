@@ -31,5 +31,5 @@ Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
 
 ## Sample
 ### Fire Monitoring
-<img src="https://drive.google.com/uc?id=16iPHLjyEiPtldXGOMciwIXmo6k6bZY93">
+<img src="https://drive.google.com/uc?id=1bjOm_xTT9A--sk3I2tuEwjrtlZlUywOb">
 
