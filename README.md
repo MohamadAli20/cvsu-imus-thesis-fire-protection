@@ -23,7 +23,7 @@ Additionally, consider including a link back to the original GitHub repository o
 - Turf.js (Point-in Polygon - check if coordinates (lat, long) are within the polygon / area)
 
 ## API & Sources
-- FIRMS API of NASA: source of fire data
+-  Fire Information for Resource Management System of NASA: source of fire data
 (https://firms.modaps.eosdis.nasa.gov/api)
 - Gimme Geodata BETA: source of geojson or boundary for local governement unit of Cavite
 (https://hanshack.com/geotools/gimmegeodata)
