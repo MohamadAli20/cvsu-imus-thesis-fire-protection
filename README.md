@@ -26,6 +26,9 @@ Additionally, consider including a link back to the original GitHub repository o
 - FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
 - Gimme Geodata BETA (https://hanshack.com/geotools/gimmegeodata/)
 
+### Entity Relational Diagram
+<img src="https://drive.google.com/uc?id=17Tip9SbmfEGm04nnrsw-tF0ZWnX0LS6X">
+
 ## Demo
 Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
 
