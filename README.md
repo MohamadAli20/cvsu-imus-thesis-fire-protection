@@ -23,8 +23,10 @@ Additionally, consider including a link back to the original GitHub repository o
 - Turf.js (Point-in Polygon - check if coordinates (lat, long) are within the polygon / area)
 
 ## API & Sources
-- FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
-- Gimme Geodata BETA (https://hanshack.com/geotools/gimmegeodata/)
+- FIRMS API of NASA: source of fire data
+(https://firms.modaps.eosdis.nasa.gov/api/)Fire data
+- Gimme Geodata BETA: source of geojson or boundary for local governement unit of Cavite
+(https://hanshack.com/geotools/gimmegeodata/)
 
 ### Entity Relational Diagram
 <img src="https://drive.google.com/uc?id=17Tip9SbmfEGm04nnrsw-tF0ZWnX0LS6X">
