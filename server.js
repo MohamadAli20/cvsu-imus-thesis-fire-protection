@@ -36,8 +36,8 @@ app.use("/:instrument/:date/:range", routes);
 app.use("/save_firedata", routes);
 app.use("/insert_imus_firedata", routes);
 
-const BASE_URL = 'https://zbe73xbmvq.ap-southeast-1.awsapprunner.com';
-// const BASE_URL = 'http://localhost:8080';
+// const BASE_URL = 'https://zbe73xbmvq.ap-southeast-1.awsapprunner.com';
+const BASE_URL = 'http://localhost:8080';
 
 // Schedule the task to run every minute
 cron.schedule('* * * * *', () => {
