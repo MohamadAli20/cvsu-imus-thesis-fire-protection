@@ -32,7 +32,7 @@ Additionally, consider including a link back to the original GitHub repository o
 ## Demo
 Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
 
-## Sample
+## User Interface
 ### Fire Monitoring
 <img src="https://drive.google.com/uc?id=1bjOm_xTT9A--sk3I2tuEwjrtlZlUywOb">
 <img src="https://drive.google.com/uc?id=1ZmiJ3uTm0iISfxNVm4DDXFcnpK8ybAWj">
