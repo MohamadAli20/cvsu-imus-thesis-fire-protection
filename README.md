@@ -21,18 +21,15 @@ Additionally, consider including a link back to the original GitHub repository o
 - Axios (HTTP request and response)
 - Leaflet.js with OpenStreetMap
 - Turf.js (Point-in Polygon - check if coordinates (lat, long) are within the polygon / area)
-- D3.js (Visualization)
 
 ## API & Sources
 - FIRMS API of NASA (https://firms.modaps.eosdis.nasa.gov/api/)
 - Gimme Geodata BETA (https://hanshack.com/geotools/gimmegeodata/)
 
+## Demo
+Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
+
 ## Sample
-### Philippines Fire Data
-<img src="https://drive.google.com/uc?id=1zF3o89zmUzcjVna03XSNe30vX86lMiTo">
+### Fire Monitoring
+<img src="https://drive.google.com/uc?id=16iPHLjyEiPtldXGOMciwIXmo6k6bZY93">
 
-### Imus City, Cavite Fire Data
-<img src="https://drive.google.com/uc?id=1Im1_FCIvXFovm1P4zBFyusU65GBtFGdu">
-
-### Imus City, Cavite Choropleth Map
-<img src="https://drive.google.com/uc?id=1Lb1Oab6r2pr6kPpaGgFwj7k6-hbcnJs7">
