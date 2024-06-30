@@ -7,10 +7,10 @@
 
 // local testing
 const config = {
-    host: 'localhost',
-    user: 'root',
-    password: '',   
-    database: 'ph_fire_data'
+    host: 'sql.freedb.tech',
+    user: 'freedb_fireauthority',
+    password: 'dZT8VYhKCHp7&MN',   
+    database: 'freedb_firedata_db'
 };
     
 module.exports = config;
