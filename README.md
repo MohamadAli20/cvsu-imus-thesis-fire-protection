@@ -1,4 +1,4 @@
-# THESIS
+# THESIS STUDY
 ## Thesis Paper
 <a href="https://drive.google.com/file/d/1FIENcJJdIE24et3jn-OFKcSkCYYSqkcF/view?usp=sharing" target="_blank">Link to Thesis</a>
 
