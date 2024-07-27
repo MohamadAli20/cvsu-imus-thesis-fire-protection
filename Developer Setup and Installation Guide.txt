@@ -1,0 +1,48 @@
+How to Run the Application:
+
+1. Install Node.js:
+   - Download and install Node.js, the runtime environment for the application, from https://nodejs.org/en.
+
+2. Get the Source Code:
+   - Download the source code by unzipping it or getting the latest release from https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection.
+
+3. Set Up Your IDE:
+   - Open the source code in your preferred IDE like Visual Studio Code (VS Code).
+
+4. Install Dependencies:
+   - Open the terminal within your IDE and run `npm install`. This command will automatically download all the libraries and dependencies listed in `package.json` and create a `node_modules` folder.
+
+5. Run the Application:
+   - In the terminal, type `node server.js` to start the application in your browser. Use `Ctrl+C` to stop the application.
+   - Alternatively, you can use `nodemon server.js` to automatically restart the Node application when changes are detected in the project directory.
+
+Setting Up the Database:
+
+1. Choose Database Software:
+   - Download and open XAMPP, WAMP, or any other software that can serve applications and databases locally.
+
+2. Access MySQL Workbench:
+   - Open MySQL Workbench and connect to your local instance.
+
+3. Create Database Schema:
+   - Create a new schema or database in MySQL Workbench and name it as desired.
+
+4. Import SQL Data:
+   - In the source code folder, locate the `sql` folder and open the `ph_fire_data.sql` file.
+   - Copy the SQL queries from this file.
+
+5. Execute SQL Queries:
+   - Paste the copied SQL queries into an open tab in MySQL Workbench. If no tab is open, create a new one.
+   - Execute the SQL queries by clicking the lightning icon. This will create the necessary database structure including tables, fields, and initial data.
+
+Connecting Application to Database:
+
+1. Configure Database Credentials:
+   - Open the source code in VS Code or your editor of choice.
+
+2. Update Database Configuration:
+   - Locate the `config.js` file in your source code.
+   - Update the database credentials with the correct username, password, host, and database name that your local database setup requires.
+
+3. Finalize Setup:
+   - Save the `config.js` file after making the necessary changes and re-run the application.
