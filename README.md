@@ -1,13 +1,6 @@
-# THESIS
-## Attribution
-
-If you use or derive from this project, please provide appropriate attribution by including the following information:
-
-- Project Name: INTEGRATED FIRE MONITORING AND ANALYSIS SYSTEM: UTILIZING API FOR REAL-TIME MAPPING, VULNERABILITY ASSESSMENT, AND DATA LOGGING 
-- Authors: Mohamad Ali Calanda, Janna May Gensaya & Sharmine Tabuada
-- GitHub Repository: https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection.git
-
-Additionally, consider including a link back to the original GitHub repository or mentioning the project's author in your project documentation or wherever appropriate.
+# THESIS STUDY
+## Thesis Paper
+<a href="https://drive.google.com/file/d/1FIENcJJdIE24et3jn-OFKcSkCYYSqkcF/view?usp=sharing" target="_blank">Link to Thesis</a>
 
 ## Technologies:
 - HTML and EJS
@@ -67,6 +60,15 @@ Watch demo here: https://www.youtube.com/watch?v=oqpk7QksZn4
 <img src="https://drive.google.com/uc?id=1fzELbXI6-NOsOUzGBW9sB3M4jj0SYxJz">
 <img src="https://drive.google.com/uc?id=1PrlyI0tTXjDGSGaORk0QRaWWpKzyFP-J">
 
+## Attribution
+
+If you use or derive from this project, please provide appropriate attribution by including the following information:
+
+- Project Name: INTEGRATED FIRE MONITORING AND ANALYSIS SYSTEM: UTILIZING API FOR REAL-TIME MAPPING, VULNERABILITY ASSESSMENT, AND DATA LOGGING 
+- Authors: Mohamad Ali Calanda, Janna May Gensaya & Sharmine Tabuada
+- GitHub Repository: https://github.com/MohamadAli20/cvsu-imus-thesis-fire-protection.git
+
+Additionally, consider including a link back to the original GitHub repository or mentioning the project's author in your project documentation or wherever appropriate.
 
 
 
