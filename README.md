@@ -1,5 +1,8 @@
 # THESIS STUDY
 
+## Total Duration
+3 weeks and 4 days based on meaningful commits.
+
 ## Technologies:
 - HTML and EJS
 - CSS and Bootstrap
